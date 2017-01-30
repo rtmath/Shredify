@@ -1,0 +1,30 @@
+<!--
+  Generated template for the AddSpot component.
+
+  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+  for more info on Angular 2 Components.
+-->
+<label>Spot Name:</label>
+<input class="form-control" #newName><br>
+<label>Spot Image:</label>
+<input class="form-control" #newImage><br>
+<label>Spot Features:</label>
+<input class="form-control" #newFeatures><br>
+<label>Spot Notes:</label>
+<input class="form-control" #newNotes><br>
+<label>Spot Comments:</label>
+<input class="form-control" #newComments><br>
+<label>Stoke Meter:</label>
+<input class="form-control" #newStokeMeter><br>
+<label>5-0 Meter:</label>
+<input class="form-control" #newfiveOMeter><br>
+
+
+<button (click)="submitForm(
+  newName.value,
+  newFeatures.value,
+  newImage.value,
+  newNotes.value,
+  newComments.value,
+  newStokeMeter.value,
+  newfiveOMeter.value);">Add</button>

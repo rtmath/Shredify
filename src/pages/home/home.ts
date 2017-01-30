@@ -4,6 +4,7 @@ import { SkateSpotService } from '../../app/skate-spot.service';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { NavController } from 'ionic-angular';
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',

@@ -14,4 +14,7 @@ export class SkateSpotService {
   getSpots() {
     return this.skatespots;
   }
+  addSkateSpot(skateSpot){
+   this.skatespots.push(skateSpot);
+  }
 }

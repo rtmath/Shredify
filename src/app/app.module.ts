@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { masterFirebaseConfig } from './api-key';
 import { AngularFireModule } from 'angularfire2';
+import { AddSpotComponent } from "../components/add-spot/add-spot";
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -21,7 +22,8 @@ export const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AddSpotComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -33,7 +35,8 @@ export const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AddSpotComponent
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

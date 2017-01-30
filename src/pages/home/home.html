@@ -10,10 +10,11 @@
   <div *ngFor="let spot of skatespots | async">
     <div>
       <h3>{{spot.name}}</h3>
-      <h4>{{spot.stokeMeter}}</h4>
-      <h4>{{spot.fiveOMeter}}</h4>
+      <h4>Stoke Meter: {{spot.stokeMeter}}</h4>
+      <h4>5-0 Meter: {{spot.fiveOMeter}}</h4>
     </div>
     <hr>
   </div>
+  <add-spot></add-spot>
 
 </ion-content>
