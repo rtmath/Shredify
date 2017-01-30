@@ -17,4 +17,11 @@ export class SkateSpotService {
   addSkateSpot(skateSpot){
    this.skatespots.push(skateSpot);
   }
+  getSkateSpot(keyId: string) {
+    return this.angularFire.database.object('skatespots/' + keyId);
+  }
+  deleteSpot(keyId: string) {
+    var dbSpot = this.getSkateSpot(keyId);
+    dbSpot.remove();
+  }
 }
