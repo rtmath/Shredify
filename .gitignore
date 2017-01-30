@@ -12,6 +12,8 @@ log.txt
 .vscode/
 npm-debug.log*
 
+src/app/api-key.ts
+
 .idea/
 .sass-cache/
 .tmp/

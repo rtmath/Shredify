@@ -1,0 +1,23 @@
+{ "skatespots": [{
+   "name": "School Spot",
+   "image": "someURL",
+   "lat": "53",
+   "lon": "23",
+   "features": ["Sick manny pad", "a bank and two rails"],
+   "notes": ["hella 5-0 here bro"],
+   "comments": ["pretty tight spot tho"],
+   "stokeMeter": 100,
+   "fiveOMeter": 100
+    },
+    {
+       "name": "Test Spot",
+       "image": "someURL",
+       "lat": "53",
+       "lon": "23",
+       "features": ["Sick manny pad", "a bank and two rails"],
+       "notes": ["hella 5-0 here bro"],
+       "comments": ["pretty tight spot tho"],
+       "stokeMeter": 100,
+       "fiveOMeter": 100
+      }]
+}
