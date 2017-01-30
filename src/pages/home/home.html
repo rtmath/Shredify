@@ -13,8 +13,11 @@
       <h4>Stoke Meter: {{spot.stokeMeter}}</h4>
       <h4>5-0 Meter: {{spot.fiveOMeter}}</h4>
     </div>
+    <button (click)="editSpot(spot.$key)">Edit</button>
+    <button (click)="deleteSpot(spot.$key)">Delete</button>
     <hr>
   </div>
   <add-spot></add-spot>
+  <edit-spot [skateSpotToDisplay]="skateSpotToDisplay"></edit-spot>
 
 </ion-content>

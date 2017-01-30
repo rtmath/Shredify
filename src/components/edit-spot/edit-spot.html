@@ -1,0 +1,25 @@
+<!--
+  Generated template for the EditSpot component.
+
+  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+  for more info on Angular 2 Components.
+-->
+
+<h3>Edit Skate Spot</h3>
+<div *ngIf="skateSpotToDisplay != null">
+  <h4>{{(skateSpotToDisplay | async)?.name}}</h4><br>
+  <label>Spot Name:</label>
+  <input value="{{(skateSpotToDisplay | async)?.name}}" class="form-control" #newName><br>
+  <label>Spot Image:</label>
+  <input value="{{(skateSpotToDisplay | async)?.image}}" class="form-control" #newImage><br>
+  <label>Spot Features:</label>
+  <input value="{{(skateSpotToDisplay | async)?.features}}" class="form-control" #newFeatures><br>
+  <label>Spot Notes:</label>
+  <input value="{{(skateSpotToDisplay | async)?.notes}}" class="form-control" #newNotes><br>
+  <label>Spot Comments:</label>
+  <input value="{{(skateSpotToDisplay | async)?.comments}}" class="form-control" #newComments><br>
+  <label>Stoke Meter:</label>
+  <input value="{{(skateSpotToDisplay | async)?.stokeMeter}}" class="form-control" #newStokeMeter><br>
+  <label>5-0 Meter:</label>
+  <input value="{{(skateSpotToDisplay | async)?.fiveOMeter}}" class="form-control" #newfiveOMeter><br>
+</div>
