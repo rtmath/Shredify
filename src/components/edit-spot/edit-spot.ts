@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { SkateSpot } from '../../app/skate-spot.model';
+import { SkateSpotService } from '../../app/skate-spot.service';
 
 /*
   Generated class for the EditSpot component.
@@ -15,8 +16,24 @@ export class EditSpotComponent {
 
   @Input() skateSpotToDisplay;
 
-  constructor() {
+  constructor(public skateSpotService: SkateSpotService) {
 
+  }
+
+  update(newName: string, newImage:string, newFeatures:string, newNotes:string, newComments:string, newStokeMeter:number, newfiveOMeter:number, keyId: string){
+    var newLat:string = "15";
+    var newLon:string = "25";
+
+    var newSkateSpot: SkateSpot = new SkateSpot(newName,
+      newLat,
+      newLon,
+      newFeatures,
+      newImage,
+      newNotes,
+      newComments,
+      newStokeMeter,
+      newfiveOMeter);
+     this.skateSpotService.updateSpot(newSkateSpot, keyId);
   }
 
 }

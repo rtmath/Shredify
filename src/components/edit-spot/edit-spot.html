@@ -8,6 +8,7 @@
 <h3>Edit Skate Spot</h3>
 <div *ngIf="skateSpotToDisplay != null">
   <h4>{{(skateSpotToDisplay | async)?.name}}</h4><br>
+  <h4>{{(skateSpotToDisplay | async)?.$key}}</h4>
   <label>Spot Name:</label>
   <input value="{{(skateSpotToDisplay | async)?.name}}" class="form-control" #newName><br>
   <label>Spot Image:</label>
@@ -22,4 +23,13 @@
   <input value="{{(skateSpotToDisplay | async)?.stokeMeter}}" class="form-control" #newStokeMeter><br>
   <label>5-0 Meter:</label>
   <input value="{{(skateSpotToDisplay | async)?.fiveOMeter}}" class="form-control" #newfiveOMeter><br>
+  <input value="{{(skateSpotToDisplay | async)?.$key}}" hidden #keyId>
+  <button (click)="update(newName.value,
+  newFeatures.value,
+  newImage.value,
+  newNotes.value,
+  newComments.value,
+  newStokeMeter.value,
+  newfiveOMeter.value,
+  keyId.value)">Update</button>
 </div>

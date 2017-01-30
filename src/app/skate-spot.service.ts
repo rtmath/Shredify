@@ -20,6 +20,20 @@ export class SkateSpotService {
   getSkateSpot(keyId: string) {
     return this.angularFire.database.object('skatespots/' + keyId);
   }
+  updateSpot(skatespot, keyId: string) {
+    var dbSpot = this.getSkateSpot(keyId);
+    dbSpot.update({
+       name: skatespot.name,
+       lat: skatespot.lat,
+       lon: skatespot.lon,
+       features: skatespot.features,
+       image: skatespot.image,
+       notes: skatespot.notes,
+       comments: skatespot.comments,
+       stokeMeter: skatespot.stokeMeter,
+       fiveOMeter: skatespot.fiveOMeter
+    });
+  }
   deleteSpot(keyId: string) {
     var dbSpot = this.getSkateSpot(keyId);
     dbSpot.remove();
