@@ -8,8 +8,36 @@
 <input class="form-control" #newName><br>
 <label>Spot Image:</label>
 <input class="form-control" #newImage><br>
-<label>Spot Features:</label>
-<input class="form-control" #newFeatures><br>
+
+<h4>Spot Features:</h4>
+<label>Stair Set
+  <input type="checkbox" [(ngModel)]="features.stairs">
+</label>
+<label>Rails
+  <input type="checkbox" [(ngModel)]="features.rails">
+</label>
+<label>Manual Pad
+  <input type="checkbox" [(ngModel)]="features.mannypad">
+</label>
+<label>Gap
+  <input type="checkbox" [(ngModel)]="features.gap">
+</label>
+<label>Ledge
+  <input type="checkbox" [(ngModel)]="features.ledge">
+</label>
+<label>Bank
+  <input type="checkbox" [(ngModel)]="features.bank">
+</label>
+<label>Wall Ride
+  <input type="checkbox" [(ngModel)]="features.wallride">
+</label>
+<label>Drop
+  <input type="checkbox" [(ngModel)]="features.drop">
+</label>
+<label>Transitions
+  <input type="checkbox" [(ngModel)]="features.transitions">
+</label>
+<hr>
 <label>Spot Notes:</label>
 <input class="form-control" #newNotes><br>
 <label>Spot Comments:</label>
@@ -20,13 +48,12 @@
 <input class="form-control" #newfiveOMeter><br>
 
 
-<button (click)="submitForm(
-  newName.value,
-  newImage.value,
-  newFeatures.value,
-  newNotes.value,
-  newComments.value,
-  newStokeMeter.value,
-  newfiveOMeter.value);">Add</button>
-
+<button (click)=
+  "submitForm(
+    newName.value,
+    newImage.value,
+    newNotes.value,
+    newComments.value,
+    newStokeMeter.value,
+    newfiveOMeter.value);">Add</button>
   <hr>

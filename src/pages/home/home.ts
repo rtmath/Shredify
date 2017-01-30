@@ -4,6 +4,7 @@ import { SkateSpotService } from '../../app/skate-spot.service';
 import { EditSpotComponent } from '../../components/edit-spot/edit-spot';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { NavController } from 'ionic-angular';
+import { FeatureModel } from '../../app/feature-model'
 
 
 @Component({
@@ -15,6 +16,8 @@ export class HomePage implements OnInit {
 
   skatespots: FirebaseListObservable<any[]>;
   skateSpotToDisplay;
+  skateSpotToDisplayKey: string = "";
+  features: FeatureModel;
 
   constructor(public navCtrl: NavController, public skateSpotService: SkateSpotService) {
 
@@ -26,6 +29,12 @@ export class HomePage implements OnInit {
 
   editSpot(key: string) {
     this.skateSpotToDisplay = this.skateSpotService.getSkateSpot(key);
+    this.skateSpotService.getSkateSpot(key).subscribe(dataEmitted => {
+      console.log(this.features);
+      this.features = dataEmitted.features;
+      console.log(dataEmitted.features);
+      console.log(this.features);
+    })
   }
 
   deleteSpot(key: string) {
