@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { DetailPage } from '../pages/detail/detail';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MapComponent } from '../components/map/map';
 import { masterFirebaseConfig } from './api-key';
@@ -29,6 +30,7 @@ export const googleMaps = {
     MyApp,
     AboutPage,
     ContactPage,
+    DetailPage,
     HomePage,
     TabsPage,
     AddSpotComponent,
@@ -48,6 +50,7 @@ export const googleMaps = {
     MyApp,
     AboutPage,
     ContactPage,
+    DetailPage,
     HomePage,
     TabsPage,
     AddSpotComponent,

@@ -6,7 +6,7 @@ import { MapComponent } from '../../components/map/map';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { NavController } from 'ionic-angular';
 import { FeatureModel } from '../../app/feature-model'
-
+import { DetailPage } from '../detail/detail';
 
 @Component({
   selector: 'page-home',
@@ -37,6 +37,13 @@ export class HomePage implements OnInit {
 
   deleteSpot(key: string) {
     this.skateSpotService.deleteSpot(key);
+  }
+
+  viewSpot(spot){
+    console.log(spot);
+    this.navCtrl.push(DetailPage, {
+      spot:spot
+    })
   }
 
 }
