@@ -1,27 +1,27 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Skate App</ion-title>
+
+    <ion-title><h1>Shredify!</h1></ion-title>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let spot of skatespots | async">
+
+  <ion-card *ngFor="let spot of skatespots | async"  color="secondary">
     <img src="{{spot.image}}" alt="" />
     <ion-card-content>
-    <ion-card-title>{{spot.name}}</ion-card-title>
+    <ion-card-title color="primary">{{spot.name}}</ion-card-title>
       <h4>Stoke Meter: {{spot.stokeMeter}}</h4>
       <h4>5-0 Meter: {{spot.fiveOMeter}}</h4>
-    <button (click)="editSpot(spot.$key)">Edit</button>
-    <button (click)="deleteSpot(spot.$key)">Delete</button>
-  <edit-spot
-    [skateSpotToDisplay]="skateSpotToDisplay"
-    [skateSpotToDisplayKey]="skateSpotToDisplayKey"
-    [(features)]="features"></edit-spot>
+
       <button (click)="editSpot(spot.$key)">Edit</button>
       <button (click)="deleteSpot(spot.$key)">Delete</button>
-      <edit-spot [skateSpotToDisplay]="skateSpotToDisplay"></edit-spot>
+      <edit-spot [skateSpotToDisplay]="skateSpotToDisplay" [skateSpotToDisplayKey]="skateSpotToDisplayKey"
+      [(features)]="features"></edit-spot>
     </ion-card-content>
   </ion-card>
-  <map></map>
     <add-spot></add-spot>
+    <map></map>
+
 </ion-content>

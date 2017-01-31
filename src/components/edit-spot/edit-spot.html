@@ -5,10 +5,11 @@
   for more info on Angular 2 Components.
 -->
 
-<h3>Edit Skate Spot</h3>
 <div *ngIf="skateSpotToDisplay != null">
-  <h4>{{(skateSpotToDisplay | async)?.name}}</h4><br>
-  <h4>{{(skateSpotToDisplay | async)?.$key}}</h4>
+
+  <h3>Edit {{(skateSpotToDisplay | async)?.name}}</h3>
+  <br>
+
   <label>Spot Name:</label>
   <input value="{{(skateSpotToDisplay | async)?.name}}" class="form-control" #newName><br>
   <label>Spot Image:</label>
