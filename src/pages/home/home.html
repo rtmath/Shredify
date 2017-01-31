@@ -11,11 +11,15 @@
     <ion-card-title>{{spot.name}}</ion-card-title>
       <h4>Stoke Meter: {{spot.stokeMeter}}</h4>
       <h4>5-0 Meter: {{spot.fiveOMeter}}</h4>
+
       <button (click)="editSpot(spot.$key)">Edit</button>
       <button (click)="deleteSpot(spot.$key)">Delete</button>
-      <edit-spot [skateSpotToDisplay]="skateSpotToDisplay"></edit-spot>
+      <edit-spot [skateSpotToDisplay]="skateSpotToDisplay" [skateSpotToDisplayKey]="skateSpotToDisplayKey"
+      [(features)]="features"></edit-spot>
     </ion-card-content>
   </ion-card>
     <add-spot></add-spot>
+    <map></map>
+
 
 </ion-content>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
+import { FeatureModel } from '../../app/feature-model';
 
 /*
   Generated class for the AddSpot component.
@@ -16,17 +17,20 @@ import { SkateSpotService } from '../../app/skate-spot.service';
 })
 export class AddSpotComponent {
 
+  features: FeatureModel = new FeatureModel(false, false, false, false, false, false, false, false, false);
+
   text: string;
 
   constructor(private skateSpotService: SkateSpotService) {
     this.text = 'Hello World';
   }
 
-  submitForm(newName: string, newImage:string, newFeatures:string, newNotes:string, newComments:string, newStokeMeter:number, newfiveOMeter:number){
+  submitForm(newName: string, newImage:string, newNotes:string, newComments:string, newStokeMeter:number, newfiveOMeter:number){
 
     var newLat:string = "15";
     var newLon:string = "25";
-    
+    var newFeatures = this.features;
+
     var newSkateSpot: SkateSpot = new SkateSpot(newName,
       newLat,
       newLon,
@@ -36,6 +40,7 @@ export class AddSpotComponent {
       newComments,
       newStokeMeter,
       newfiveOMeter);
+      console.log(newSkateSpot);
      this.skateSpotService.addSkateSpot(newSkateSpot);
   }
 

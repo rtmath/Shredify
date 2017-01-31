@@ -5,16 +5,23 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { MapComponent } from '../components/map/map';
 import { masterFirebaseConfig } from './api-key';
+import { mastergoogleMaps } from './api-key';
 import { AngularFireModule } from 'angularfire2';
 import { AddSpotComponent } from "../components/add-spot/add-spot";
 import { EditSpotComponent } from '../components/edit-spot/edit-spot';
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket
+}
+export const googleMaps = {
+  apiKey: mastergoogleMaps.apiKey
 }
 
 @NgModule({
@@ -25,11 +32,16 @@ export const firebaseConfig = {
     HomePage,
     TabsPage,
     AddSpotComponent,
-    EditSpotComponent
+    EditSpotComponent,
+    MapComponent
+
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AgmCoreModule.forRoot({
+     apiKey: googleMaps.apiKey
+   })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -39,7 +51,8 @@ export const firebaseConfig = {
     HomePage,
     TabsPage,
     AddSpotComponent,
-    EditSpotComponent
+    EditSpotComponent,
+    MapComponent
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SkateSpot } from '../../app/skate-spot.model';
+import { SkateSpotService } from '../../app/skate-spot.service';
+import { FeatureModel } from '../../app/feature-model';
 
 /*
   Generated class for the EditSpot component.
@@ -11,12 +13,34 @@ import { SkateSpot } from '../../app/skate-spot.model';
   selector: 'edit-spot',
   templateUrl: 'edit-spot.html'
 })
-export class EditSpotComponent {
+export class EditSpotComponent implements OnInit {
 
+  @Input() features: FeatureModel;
   @Input() skateSpotToDisplay;
+  @Input() skateSpotToDisplayKey: string;
 
-  constructor() {
+  constructor(public skateSpotService: SkateSpotService) {
 
+  }
+
+  ngOnInit() {
+
+  }
+
+  update(newName: string, newImage:string, newNotes:string, newComments:string, newStokeMeter:number, newfiveOMeter:number, keyId: string){
+    var newLat:string = "15";
+    var newLon:string = "25";
+
+    var newSkateSpot: SkateSpot = new SkateSpot(newName,
+      newLat,
+      newLon,
+      this.features,
+      newImage,
+      newNotes,
+      newComments,
+      newStokeMeter,
+      newfiveOMeter);
+     this.skateSpotService.updateSpot(newSkateSpot, keyId);
   }
 
 }

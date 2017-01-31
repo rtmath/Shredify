@@ -8,12 +8,41 @@
 <h3>Edit Skate Spot</h3>
 <div *ngIf="skateSpotToDisplay != null">
   <h4>{{(skateSpotToDisplay | async)?.name}}</h4><br>
+  <h4>{{(skateSpotToDisplay | async)?.$key}}</h4>
   <label>Spot Name:</label>
   <input value="{{(skateSpotToDisplay | async)?.name}}" class="form-control" #newName><br>
   <label>Spot Image:</label>
   <input value="{{(skateSpotToDisplay | async)?.image}}" class="form-control" #newImage><br>
-  <label>Spot Features:</label>
-  <input value="{{(skateSpotToDisplay | async)?.features}}" class="form-control" #newFeatures><br>
+
+  <h4>Spot Features:</h4>
+  <label>Stair Set
+    <input type="checkbox" [checked]="features.stairs">
+  </label>
+  <label>Rails
+    <input type="checkbox" [checked]="features.rails">
+  </label>
+  <label>Manual Pad
+    <input type="checkbox" [checked]="features.mannypad">
+  </label>
+  <label>Gap
+    <input type="checkbox" [checked]="features.gap">
+  </label>
+  <label>Ledge
+    <input type="checkbox" [checked]="features.ledge">
+  </label>
+  <label>Bank
+    <input type="checkbox" [checked]="features.bank">
+  </label>
+  <label>Wall Ride
+    <input type="checkbox" [checked]="features.wallride">
+  </label>
+  <label>Drop
+    <input type="checkbox" [checked]="features.drop">
+  </label>
+  <label>Transitions
+    <input type="checkbox" [checked]="features.transitions">
+  </label>
+
   <label>Spot Notes:</label>
   <input value="{{(skateSpotToDisplay | async)?.notes}}" class="form-control" #newNotes><br>
   <label>Spot Comments:</label>
@@ -22,4 +51,15 @@
   <input value="{{(skateSpotToDisplay | async)?.stokeMeter}}" class="form-control" #newStokeMeter><br>
   <label>5-0 Meter:</label>
   <input value="{{(skateSpotToDisplay | async)?.fiveOMeter}}" class="form-control" #newfiveOMeter><br>
+  <input value="{{(skateSpotToDisplay | async)?.$key}}" hidden #keyId>
+
+  <button (click)="update(newName.value,
+  newImage.value,
+  newNotes.value,
+  newComments.value,
+  newStokeMeter.value,
+  newfiveOMeter.value,
+  keyId.value)">Update</button>
+
+  {{(skateSpotToDisplay | async)?.features.stairs}}
 </div>
