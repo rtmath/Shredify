@@ -3,6 +3,7 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
 import { FeatureModel } from '../../app/feature-model';
+import { MapMarker } from '../../app/map-marker.model';
 
 /*
   Generated class for the AddSpot component.
@@ -27,8 +28,8 @@ export class AddSpotComponent {
 
   submitForm(newName: string, newImage:string, newNotes:string, newComments:string, newStokeMeter:number, newfiveOMeter:number){
 
-    var newLat:string = "15";
-    var newLon:string = "25";
+    var newLat:number = 45.523064;
+    var newLon:number = -122.676483;
     var newFeatures = this.features;
 
     var newSkateSpot: SkateSpot = new SkateSpot(newName,

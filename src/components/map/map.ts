@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { MapMarker } from '../../app/map-marker.model';
-import { MARKERS } from '../../app/markers';
+import { Component, OnInit } from '@angular/core';
+import { SkateSpotService } from '../../app/skate-spot.service';
+import { SkateSpot } from '../../app/skate-spot.model';
+import { FirebaseListObservable } from 'angularfire2';
+import { FeatureModel } from '../../app/feature-model';
 
 @Component({
   selector: 'map',
@@ -9,38 +11,44 @@ import { MARKERS } from '../../app/markers';
 export class MapComponent {
   lat: number = 45.523064;
   lng: number = -122.676483;
-  markerLat: number = 45.5210;
-  markerLng: number = -122.6541;
   clickedLat: number;
   clickedLon: number;
   zoom: number = 12;
-  infoWindow: boolean = false;
-  markers: MapMarker[] = [];
   text: string;
-  currentMarker: MapMarker = null;
 
-  constructor() {
-    MARKERS.forEach((elem) => {
-      this.markers.push(elem);
-    })
+  newSpot = null;
+  newSpotDraggable = false;
+
+  iconImg = "https://firebasestorage.googleapis.com/v0/b/skater-app-1d3e8.appspot.com/o/green-marker.png?alt=media&token=c174654d-9086-44a9-b484-0cdf57572797";
+
+  spots: SkateSpot[] = [];
+
+  constructor(public service: SkateSpotService) {
+
+  }
+
+  ngOnInit() {
+    this.service.getSpots().subscribe(data => {
+      data.forEach((elem) => {
+        this.spots.push(elem);
+      })
+    });
   }
 
   mapClick(event) {
-    if (this.currentMarker === null) {
+    if (this.newSpot === null) {
       this.clickedLat = event.coords.lat;
-      this.clickedLon =  event.coords.lng;
-      var newMarker = new MapMarker(this.clickedLat, this.clickedLon, this.markers.length, "S", true, true, true);
-      this.markers.push(newMarker);
-      this.currentMarker = newMarker;
+      this.clickedLon = event.coords.lng;
+      this.newSpot = {
+        lat: event.coords.lat,
+        lon: event.coords.lng,
+        draggable: true
+      }
     }
   }
 
   setMarker(title) {
-    this.markers.forEach((elem)=> {
-      if (elem.title === title) {
-        this.currentMarker = elem;
-      }
-    })
+
   }
 
 }

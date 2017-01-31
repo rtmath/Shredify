@@ -28,8 +28,8 @@ export class EditSpotComponent implements OnInit {
   }
 
   update(newName: string, newImage:string, newNotes:string, newComments:string, newStokeMeter:number, newfiveOMeter:number, keyId: string){
-    var newLat:string = "15";
-    var newLon:string = "25";
+    var newLat:number = 45.523064;
+    var newLon:number = -122.676483;
 
     var newSkateSpot: SkateSpot = new SkateSpot(newName,
       newLat,

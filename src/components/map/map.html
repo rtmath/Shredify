@@ -7,13 +7,26 @@
 <hr>
 <h4>Map</h4>
 <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClick($event)">
-  <div *ngFor="let marker of markers">
+  <div *ngFor="let spot of spots">
     <sebm-google-map-marker
-      [latitude]="marker.markerLat"
-      [longitude]="marker.markerLon"
-      [label]="'S'"
-      [markerDraggable]="marker.isDraggable"
-      [openInfoWindow]="marker.openInfoWindow">
+      [latitude]="spot.lat"
+      [longitude]="spot.lon"
+      [markerDraggable]="false"
+      [openInfoWindow]="true">
+      <sebm-google-map-info-window>
+        <h5>{{spot.name}}</h5><br>
+        <a>Spot Details</a>
+      </sebm-google-map-info-window>
+    </sebm-google-map-marker>
+  </div>
+  <!--vvv NEW MARKER ON USER CLICK vvv-->
+  <div class="new" *ngIf="newSpot != null">
+    <sebm-google-map-marker
+      [latitude]="newSpot.lat"
+      [longitude]="newSpot.lon"
+      [markerDraggable]="newSpot.draggable"
+      [openInfoWindow]="true"
+      [iconUrl]="iconImg">
       <sebm-google-map-info-window>
         Do you want to add this spot?
         <div class="markerButton">Add Spot</div>
