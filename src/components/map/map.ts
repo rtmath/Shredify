@@ -3,6 +3,7 @@ import { SkateSpotService } from '../../app/skate-spot.service';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { FirebaseListObservable } from 'angularfire2';
 import { FeatureModel } from '../../app/feature-model';
+import { FeatureFilter } from '../../pipes/feature-filter';
 
 @Component({
   selector: 'map',
@@ -42,7 +43,8 @@ export class MapComponent {
       this.newSpot = {
         lat: event.coords.lat,
         lon: event.coords.lng,
-        draggable: true
+        draggable: true,
+        open: false
       }
     }
   }

@@ -6,6 +6,7 @@ import { MapComponent } from '../../components/map/map';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { NavController } from 'ionic-angular';
 import { FeatureModel } from '../../app/feature-model'
+import { FeatureFilter } from '../../pipes/feature-filter';
 
 
 @Component({
@@ -19,6 +20,17 @@ export class HomePage implements OnInit {
   skateSpotToDisplay;
   skateSpotToDisplayKey: string = "";
   features: FeatureModel;
+  testFilter: FeatureModel = {
+      stairs: false,
+      rails: false,
+      mannypad: false,
+      gap: false,
+      ledge: false,
+      bank: false,
+      wallride: false,
+      drop: false,
+      transitions: false
+  }
 
   constructor(public navCtrl: NavController, public skateSpotService: SkateSpotService) {
 
@@ -37,6 +49,10 @@ export class HomePage implements OnInit {
 
   deleteSpot(key: string) {
     this.skateSpotService.deleteSpot(key);
+  }
+
+  change() {
+    console.log(this.testFilter);
   }
 
 }

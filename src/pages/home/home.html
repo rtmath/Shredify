@@ -8,8 +8,36 @@
 
 <ion-content padding>
 
-  <map></map>
-  <ion-card *ngFor="let spot of skatespots | async"  color="secondary">
+  <h4>Spot Features:</h4>
+  <label>Stair Set
+    <input type="checkbox" [(ngModel)]="testFilter.stairs" (ngModelChange)="change()">
+  </label>
+  <label>Rails
+    <input type="checkbox" [(ngModel)]="testFilter.rails" (ngModelChange)="change()">
+  </label>
+  <label>Manual Pad
+    <input type="checkbox" [(ngModel)]="testFilter.mannypad" (ngModelChange)="change()">
+  </label>
+  <label>Gap
+    <input type="checkbox" [(ngModel)]="testFilter.gap" (ngModelChange)="change()">
+  </label>
+  <label>Ledge
+    <input type="checkbox" [(ngModel)]="testFilter.ledge" (ngModelChange)="change()">
+  </label>
+  <label>Bank
+    <input type="checkbox" [(ngModel)]="testFilter.bank" (ngModelChange)="change()">
+  </label>
+  <label>Wall Ride
+    <input type="checkbox" [(ngModel)]="testFilter.wallride" (ngModelChange)="change()">
+  </label>
+  <label>Drop
+    <input type="checkbox" [(ngModel)]="testFilter.drop" (ngModelChange)="change()">
+  </label>
+  <label>Transitions
+    <input type="checkbox" [(ngModel)]="testFilter.transitions" (ngModelChange)="change()">
+  </label>
+
+  <ion-card *ngFor="let spot of skatespots | async | filter:testFilter"  color="secondary">
     <img src="{{spot.image}}" alt="" />
     <ion-card-content>
     <ion-card-title color="primary">{{spot.name}}</ion-card-title>
@@ -23,5 +51,6 @@
     </ion-card-content>
   </ion-card>
     <add-spot></add-spot>
+    <map></map>
 
 </ion-content>

@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AddSpotComponent } from "../components/add-spot/add-spot";
 import { EditSpotComponent } from '../components/edit-spot/edit-spot';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { FeatureFilter } from '../pipes/feature-filter';
 
 
 export const firebaseConfig = {
@@ -33,8 +34,8 @@ export const googleMaps = {
     TabsPage,
     AddSpotComponent,
     EditSpotComponent,
-    MapComponent
-
+    MapComponent,
+    FeatureFilter
   ],
   imports: [
     IonicModule.forRoot(MyApp),

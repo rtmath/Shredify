@@ -1,23 +1,43 @@
 { "skatespots": [{
-   "name": "School Spot",
-   "image": "someURL",
-   "lat": "53",
-   "lon": "23",
-   "features": ["Sick manny pad", "a bank and two rails"],
-   "notes": ["hella 5-0 here bro"],
-   "comments": ["pretty tight spot tho"],
-   "stokeMeter": 100,
-   "fiveOMeter": 100
+     "name": "School Spot",
+     "image": "http://www.yetanotherreviewsite.co.uk/images/news/5741/3718THPSHD_Multi_School2_03.jpg",
+     "lat": 45.523064,
+     "lon": -122.676483,
+     "features": {
+       "stairs": true,
+       "rails": true,
+       "mannypad": false,
+       "gap": false,
+       "ledge": false,
+       "bank": false,
+       "wallride": false,
+       "drop": false,
+       "transitions": false
+     },
+     "notes": ["hella 5-0 here bro"],
+     "comments": ["pretty tight spot tho"],
+     "stokeMeter": 100,
+     "fiveOMeter": 100
     },
     {
-       "name": "Test Spot",
-       "image": "someURL",
-       "lat": 45.523064,
-       "lon": -122.676483,
-       "features": ["Sick manny pad", "a bank and two rails"],
-       "notes": ["hella 5-0 here bro"],
-       "comments": ["pretty tight spot tho"],
-       "stokeMeter": 100,
-       "fiveOMeter": 100
+     "name": "Loading Dock",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Warehouse_Loading_Dock.JPG",
+     "lat": 45.523064,
+     "lon": -122.676483,
+     "features": {
+       "stairs": false,
+       "rails": false,
+       "mannypad": false,
+       "gap": true,
+       "ledge": true,
+       "bank": false,
+       "wallride": false,
+       "drop": false,
+       "transitions": false
+     },
+     "notes": ["hella 5-0 here bro"],
+     "comments": ["pretty tight spot tho"],
+     "stokeMeter": 100,
+     "fiveOMeter": 100
       }]
 }
