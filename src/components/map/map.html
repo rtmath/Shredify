@@ -1,0 +1,16 @@
+<!--
+  Generated template for the Map component.
+
+  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+  for more info on Angular 2 Components.
+-->
+<hr>
+<h4>Map</h4>
+<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClick($event)">
+  <sebm-google-map-marker [latitude]="markerLat" [longitude]="markerLng" [label]="'M'">
+  </sebm-google-map-marker>
+ </sebm-google-map>
+
+<div *ngIf="clickedLat != null && clickedLon != null">
+Clicked Lat: {{clickedLat}} || Clicked Lon: {{clickedLon}}
+</div>

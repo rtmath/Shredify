@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
 import { EditSpotComponent } from '../../components/edit-spot/edit-spot';
+import { MapComponent } from '../../components/map/map';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { NavController } from 'ionic-angular';
 import { FeatureModel } from '../../app/feature-model'
@@ -30,10 +31,7 @@ export class HomePage implements OnInit {
   editSpot(key: string) {
     this.skateSpotToDisplay = this.skateSpotService.getSkateSpot(key);
     this.skateSpotService.getSkateSpot(key).subscribe(dataEmitted => {
-      console.log(this.features);
       this.features = dataEmitted.features;
-      console.log(dataEmitted.features);
-      console.log(this.features);
     })
   }
 
