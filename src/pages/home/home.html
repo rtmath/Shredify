@@ -1,23 +1,21 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Skate App</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to our Skate App!</h2>
-
-  <div *ngFor="let spot of skatespots | async">
-    <div>
-      <h3>{{spot.name}}</h3>
+  <ion-card *ngFor="let spot of skatespots | async">
+    <img src="{{spot.image}}" alt="" />
+    <ion-card-content>
+    <ion-card-title>{{spot.name}}</ion-card-title>
       <h4>Stoke Meter: {{spot.stokeMeter}}</h4>
       <h4>5-0 Meter: {{spot.fiveOMeter}}</h4>
-    </div>
-    <button (click)="editSpot(spot.$key)">Edit</button>
-    <button (click)="deleteSpot(spot.$key)">Delete</button>
-    <hr>
-  </div>
-  <add-spot></add-spot>
-  <edit-spot [skateSpotToDisplay]="skateSpotToDisplay"></edit-spot>
+      <button (click)="editSpot(spot.$key)">Edit</button>
+      <button (click)="deleteSpot(spot.$key)">Delete</button>
+      <edit-spot [skateSpotToDisplay]="skateSpotToDisplay"></edit-spot>
+    </ion-card-content>
+  </ion-card>
+    <add-spot></add-spot>
 
 </ion-content>
