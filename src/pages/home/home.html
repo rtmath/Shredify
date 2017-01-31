@@ -7,19 +7,19 @@
 </ion-header> -->
 
 <ion-content padding>
-  <div class="newButton" (click)=newSpot()>+</div>
+  <div class="newButton" (click)="newSpot()">+</div>
 
   <ion-card *ngFor="let spot of skatespots | async"  color="secondary" (click)="viewSpot(spot)">
     <img class="imgSize" src="{{spot.image}}" alt="" />
     <ion-card-content>
-    <ion-card-title color="primary">{{spot.name}}</ion-card-title>
+    <ion-card-title>{{spot.name}}</ion-card-title>
       <h4>Stoke Meter: {{spot.stokeMeter}}</h4>
       <h4>5-0 Meter: {{spot.fiveOMeter}}</h4>
 
-      <button (click)="editSpot(spot.$key)">Edit</button>
+      <!-- <button (click)="editSpot(spot.$key)">Edit</button>
       <button (click)="deleteSpot(spot.$key)">Delete</button>
       <edit-spot [skateSpotToDisplay]="skateSpotToDisplay" [skateSpotToDisplayKey]="skateSpotToDisplayKey"
-      [(features)]="features"></edit-spot>
+      [(features)]="features"></edit-spot> -->
     </ion-card-content>
   </ion-card>
     <!-- <add-spot></add-spot>

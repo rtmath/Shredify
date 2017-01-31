@@ -7,6 +7,8 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { NavController } from 'ionic-angular';
 import { FeatureModel } from '../../app/feature-model'
 import { DetailPage } from '../detail/detail';
+import { AddSpotComponent } from '../../components/add-spot/add-spot';
+
 
 @Component({
   selector: 'page-home',
@@ -44,6 +46,10 @@ export class HomePage implements OnInit {
     this.navCtrl.push(DetailPage, {
       spot:spot
     })
+  }
+
+  newSpot() {
+    this.navCtrl.push(AddSpotComponent);
   }
 
 }
