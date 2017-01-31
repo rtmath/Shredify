@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
+import { MapMarker } from '../../app/map-marker.model';
+import { MARKERS } from '../../app/markers';
 
-
-/*
-  Generated class for the Map component.
-
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
-*/
 @Component({
   selector: 'map',
   templateUrl: 'map.html'
@@ -14,21 +9,38 @@ import { Component } from '@angular/core';
 export class MapComponent {
   lat: number = 45.523064;
   lng: number = -122.676483;
-  markerLat: number = 45.4076;
-  markerLng: number = -122.5704;
+  markerLat: number = 45.5210;
+  markerLng: number = -122.6541;
   clickedLat: number;
   clickedLon: number;
   zoom: number = 12;
-
+  infoWindow: boolean = false;
+  markers: MapMarker[] = [];
   text: string;
+  currentMarker: MapMarker = null;
 
   constructor() {
-
+    MARKERS.forEach((elem) => {
+      this.markers.push(elem);
+    })
   }
 
   mapClick(event) {
-    this.clickedLat = event.coords.lat;
-    this.clickedLon =  event.coords.lng;
+    if (this.currentMarker === null) {
+      this.clickedLat = event.coords.lat;
+      this.clickedLon =  event.coords.lng;
+      var newMarker = new MapMarker(this.clickedLat, this.clickedLon, this.markers.length, "S", true, true, true);
+      this.markers.push(newMarker);
+      this.currentMarker = newMarker;
+    }
+  }
+
+  setMarker(title) {
+    this.markers.forEach((elem)=> {
+      if (elem.title === title) {
+        this.currentMarker = elem;
+      }
+    })
   }
 
 }

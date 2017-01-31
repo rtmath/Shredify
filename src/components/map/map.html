@@ -7,8 +7,19 @@
 <hr>
 <h4>Map</h4>
 <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClick($event)">
-  <sebm-google-map-marker [latitude]="markerLat" [longitude]="markerLng" [label]="'M'">
-  </sebm-google-map-marker>
+  <div *ngFor="let marker of markers">
+    <sebm-google-map-marker
+      [latitude]="marker.markerLat"
+      [longitude]="marker.markerLon"
+      [label]="'S'"
+      [markerDraggable]="marker.isDraggable"
+      [openInfoWindow]="marker.openInfoWindow">
+      <sebm-google-map-info-window>
+        Do you want to add this spot?
+        <div class="markerButton">Add Spot</div>
+      </sebm-google-map-info-window>
+    </sebm-google-map-marker>
+  </div>
  </sebm-google-map>
 
 <div *ngIf="clickedLat != null && clickedLon != null">

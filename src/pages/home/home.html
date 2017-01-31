@@ -8,6 +8,7 @@
 
 <ion-content padding>
 
+  <map></map>
   <ion-card *ngFor="let spot of skatespots | async"  color="secondary">
     <img src="{{spot.image}}" alt="" />
     <ion-card-content>
@@ -22,6 +23,5 @@
     </ion-card-content>
   </ion-card>
     <add-spot></add-spot>
-    <map></map>
 
 </ion-content>
