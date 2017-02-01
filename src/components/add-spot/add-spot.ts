@@ -4,17 +4,11 @@ import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
 import { FeatureModel } from '../../app/feature-model';
 import firebase from 'firebase';
-import { Camera, CameraOptions } from 'ionic-native';
+import { Camera, CameraOptions, ScreenOrientation } from 'ionic-native';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
 import { Geolocation } from 'ionic-native';
 
-/*
-  Generated class for the AddSpot component.
-
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
-*/
 @Component({
   selector: 'add-spot',
   templateUrl: 'add-spot.html',
@@ -93,13 +87,14 @@ export class AddSpotComponent {
 
 
   takePicture(){
-
+    ScreenOrientation.lockOrientation('landscape');
     Camera.getPicture({
         destinationType: Camera.DestinationType.DATA_URL,
         targetWidth: 1000,
         targetHeight: 1000
     }).then((imageData) => {
         this.currentImage = "data:image/jpeg;base64," + imageData;
+        ScreenOrientation.unlockOrientation();
     }, (err) => {
         console.log(err);
     });
@@ -117,9 +112,12 @@ export class AddSpotComponent {
     imageRef.putString(this.currentImage, firebase.storage.StringFormat.DATA_URL).then((snapshot)=> {
       this.successAlert();
       var url = snapshot.downloadURL;
-      alert(url);
+      // alert(url);
 
       this.currentImageUrl = url;
+
+      this.secondForm = true;
+      this.firstForm = null;
 
       // imageRef.getDownloadURL().then(function(url) {
       //   alert(url);
@@ -147,14 +145,14 @@ export class AddSpotComponent {
 
   nextForm() {
     this.useMap = null;
-    this.secondForm = true;
+    this.firstForm = true;
   }
 
-  nextForm1() {
-
-    this.secondForm = true;
-    this.firstForm = null;
-  }
+  // nextForm1() {
+  //
+  //   this.secondForm = true;
+  //   this.firstForm = null;
+  // }
 
   nextForm2() {
     this.secondForm = null;

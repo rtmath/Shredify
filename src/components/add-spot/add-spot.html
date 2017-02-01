@@ -33,8 +33,8 @@
 
         <button ion-button color="primary" (click)="takePicture()">add image</button>
         <img [src]="currentImage" *ngIf="currentImage" />
-        <button ion-button color="secondary" (click)="upload()" *ngIf="currentImage">Upload!</button>
-        <button type="button" name="button" (click)="nextForm1()" ion-button color="secondary" class="nextButton">Next</button>
+        <button ion-button color="secondary" (click)="upload()" *ngIf="currentImage" class="nextButton">Next</button>
+        <!-- <button type="button" name="button" (click)="nextForm1()" ion-button color="secondary" class="nextButton">Next</button> -->
       </ion-content>
 
      <!-- <ion-content>
@@ -96,11 +96,11 @@
        </ion-item>
        <ion-item>
          <ion-label>Stoke Meter:</ion-label>
-         <ion-input #newStokeMeter></ion-input>
+         <ion-range min="0" max="500" step="1" #newStokeMeter></ion-range>
        </ion-item>
        <ion-item>
          <ion-label>5-0 Meter:</ion-label>
-         <ion-input #newFiveOMeter></ion-input>
+         <ion-range min="0" max="500" step="1" #newFiveOMeter></ion-range>
        </ion-item>
        <button (click)=
        "submitForm(newName.value,

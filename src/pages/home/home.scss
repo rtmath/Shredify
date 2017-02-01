@@ -73,4 +73,60 @@
   border-radius: 50%;
   background-color: rgb(53, 147, 143);
   color: white;
+  z-index: 2;
 }
+
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+    filter: grayscale(85%);
+    transition: all 500ms ease-in-out;
+
+    &:active {
+      filter: grayscale(0%);
+
+    }
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 3em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.9em;
+    position: absolute;
+    top: 56%;
+    width: 100%;
+    color: rgb(222, 255, 215);
+  }
+
+}
+
+.menuButton {
+  font-size: 2em;
+  color: black;
+  // background-color: rgb(53, 147, 143);
+  border: solid 3px rgb(53, 147, 143);
+  background-color: white;
+  width: 60%;
+  margin: 3% auto;
+}
+//
+// .header {
+//   background-color: red;
+// }
+//
+// .navbar {
+//   background-color: red;
+// }
+// ion-header  {
+//   box-shadow: none !important;
+//   background-color: rgb(210, 226, 231) !important;
+// }

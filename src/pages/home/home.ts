@@ -3,6 +3,7 @@ import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
 import { EditSpotComponent } from '../../components/edit-spot/edit-spot';
 import { MapComponent } from '../../components/map/map';
+import { MapViewComponent } from '../../components/map-view/map-view';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { NavController } from 'ionic-angular';
 import { FeatureModel } from '../../app/feature-model'
@@ -18,7 +19,8 @@ import { Geolocation } from 'ionic-native';
   providers: [SkateSpotService]
 })
 export class HomePage implements OnInit {
-
+  showMapVar: boolean = false;
+  showFeaturesVar: boolean = true;
   skatespots: FirebaseListObservable<any[]>;
   skateSpotToDisplay;
   skateSpotToDisplayKey: string = "";
@@ -57,7 +59,6 @@ export class HomePage implements OnInit {
 
 
   viewSpot(spot){
-    console.log(spot);
     this.navCtrl.push(DetailPage, {
       spot:spot
     })
@@ -65,6 +66,14 @@ export class HomePage implements OnInit {
 
   newSpot() {
     this.navCtrl.push(AddSpotComponent);
+  }
+  showMap(){
+    this.showMapVar = true;
+    this.showFeaturesVar = false;
+  }
+  showFeatures(){
+    this.showFeaturesVar = true;
+    this.showMapVar = false;
   }
 
 }
