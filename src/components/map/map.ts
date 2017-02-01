@@ -77,4 +77,8 @@ export class MapComponent {
     this.locSender.emit(coords)
   }
 
+  // updateCurrentLoc() {
+  //   this.currentLat
+  // }
+
 }

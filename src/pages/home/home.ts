@@ -54,11 +54,7 @@ export class HomePage implements OnInit {
     this.skateSpotService.deleteSpot(key);
   }
 
-  currentLocation() {
-        Geolocation.getCurrentPosition().then((resp) => {
-        alert(resp.coords.latitude + resp.coords.longitude);
-    });
-  }
+
 
   viewSpot(spot){
     console.log(spot);

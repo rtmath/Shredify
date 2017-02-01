@@ -7,6 +7,7 @@ import firebase from 'firebase';
 import { Camera, CameraOptions } from 'ionic-native';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
+import { Geolocation } from 'ionic-native';
 
 /*
   Generated class for the AddSpot component.
@@ -47,6 +48,7 @@ export class AddSpotComponent {
   public currentImageUrl: string;
 
 
+
   constructor(private skateSpotService: SkateSpotService, public navCtrl: NavController) {
     this.text = 'Hello World';
   }
@@ -73,7 +75,21 @@ export class AddSpotComponent {
      this.navCtrl.push(HomePage)
   }
 
+  setLocation(event) {
+    this.locationSelected = true;
+    this.clickedLat = event.lat;
+    this.clickedLon = event.lon;
+  }
 
+  currentLocation() {
+        Geolocation.getCurrentPosition().then((resp) => {
+          var currentLat: number = resp.coords.latitude;
+          var currentLon: number = resp.coords.longitude;
+          this.clickedLat = currentLat;
+          this.clickedLon = currentLon;
+          alert(currentLat + currentLon);
+    });
+  }
 
 
   takePicture(){
@@ -116,11 +132,8 @@ export class AddSpotComponent {
     alert("Upload Successful!");
   }
 
-  setLocation(event) {
-    this.locationSelected = true;
-    this.clickedLat = event.lat;
-    this.clickedLon = event.lon;
-  }
+
+
 
   goToLocationForm() {
     this.selectLocationType = null;

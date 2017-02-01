@@ -16,7 +16,7 @@
 <ion-content padding>
 
       <div *ngIf="selectLocationType" class="spotLocationSelection">
-        <button ion-button color="primary" (click)="goToLocationForm()">Use Location</button>
+        <button ion-button color="primary" (click)="goToLocationForm()">Use Current Location</button>
         <button ion-button color="secondary" (click)="goToMapForm()">Use Google Maps</button>
       </div>
 
@@ -26,7 +26,8 @@
       </div>
 
       <div *ngIf="useLocation">
-        Geolocation
+        <button (click)="currentLocation()">Geolocation</button>
+        <button type="button" name="button" (click)="nextForm()" ion-button>Next</button>
       </div>
 
       <ion-content *ngIf="firstForm">
