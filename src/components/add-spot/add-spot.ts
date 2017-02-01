@@ -4,7 +4,7 @@ import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
 import { FeatureModel } from '../../app/feature-model';
 import firebase from 'firebase';
-import { Camera, CameraOptions } from 'ionic-native';
+import { Camera, CameraOptions, ScreenOrientation } from 'ionic-native';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
 
@@ -71,13 +71,14 @@ export class AddSpotComponent {
 
 
   takePicture(){
-
+    ScreenOrientation.lockOrientation('landscape');
     Camera.getPicture({
         destinationType: Camera.DestinationType.DATA_URL,
         targetWidth: 1000,
         targetHeight: 1000
     }).then((imageData) => {
         this.currentImage = "data:image/jpeg;base64," + imageData;
+        ScreenOrientation.unlockOrientation();
     }, (err) => {
         console.log(err);
     });
