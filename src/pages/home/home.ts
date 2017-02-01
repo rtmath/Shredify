@@ -3,6 +3,7 @@ import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
 import { EditSpotComponent } from '../../components/edit-spot/edit-spot';
 import { MapComponent } from '../../components/map/map';
+import { MapViewComponent } from '../../components/map-view/map-view';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { NavController } from 'ionic-angular';
 import { FeatureModel } from '../../app/feature-model'
@@ -55,7 +56,6 @@ export class HomePage implements OnInit {
   }
 
   viewSpot(spot){
-    console.log(spot);
     this.navCtrl.push(DetailPage, {
       spot:spot
     })

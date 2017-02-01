@@ -1,0 +1,18 @@
+sebm-google-map {
+  height: 500px;
+}
+
+div {
+  color: #387ef5;
+}
+
+.markerButton {
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.new {
+  sebm-google-map-marker {
+    background-color: blue;
+  }
+}

@@ -4,6 +4,8 @@ import { SkateSpot } from '../../app/skate-spot.model';
 import { FirebaseListObservable } from 'angularfire2';
 import { FeatureModel } from '../../app/feature-model';
 import { FeatureFilter } from '../../pipes/feature-filter';
+import { NavController } from 'ionic-angular';
+import { DetailPage } from '../../pages/detail/detail';
 
 @Component({
   selector: 'map',
@@ -37,7 +39,7 @@ export class MapComponent {
 
   spots: SkateSpot[] = [];
 
-  constructor(public service: SkateSpotService) {
+  constructor(public service: SkateSpotService, public navCtrl: NavController) {
 
   }
 
@@ -75,6 +77,12 @@ export class MapComponent {
       lon: this.clickedLon
     };
     this.locSender.emit(coords)
+  }
+
+  viewSpotDetails(spot) {
+    this.navCtrl.push(DetailPage, {
+      spot:spot
+    })
   }
 
 }
