@@ -1,11 +1,3 @@
-<!--
-  Generated template for the Map component.
-
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
--->
-<hr>
-<h4>Map</h4>
 
 
 <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClick($event)">
@@ -28,7 +20,8 @@
       [longitude]="newSpot.lon"
       [markerDraggable]="newSpot.draggable"
       [openInfoWindow]="true"
-      [iconUrl]="iconImg">
+      [iconUrl]="iconImg"
+      (dragEnd)="updateLoc($event)">
       <sebm-google-map-info-window>
         Do you want to add this spot?
         <div class="markerButton">Add Spot</div>
@@ -36,7 +29,3 @@
     </sebm-google-map-marker>
   </div>
  </sebm-google-map>
-
-<!-- <div *ngIf="clickedLat != null && clickedLon != null">
-Clicked Lat: {{clickedLat}} || Clicked Lon: {{clickedLon}}
-</div> -->
