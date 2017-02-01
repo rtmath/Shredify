@@ -10,25 +10,30 @@
   <div class="newButton" (click)="newSpot()">+</div>
 
 
-<div *ngIf="showFeaturesVar">
-  <ion-card *ngFor="let spot of skatespots | async | filter:testFilter"  color="secondary" (click)="viewSpot(spot)">
-    <img class="imgSize" src="{{spot.image}}" alt="" />
 
-    <ion-card-content>
+<ion-content class="card-background-page" *ngIf="showFeaturesVar">
+
+  <ion-card *ngFor="let spot of skatespots | async | filter:testFilter"  color="secondary" (click)="viewSpot(spot)">
+
+    <img class="imgSize" src="{{spot.image}}" alt="" />
+    <div class="card-title">{{spot.name}}</div>
+    <div class="card-subtitle">{{spot.notes}}</div>
+
+    <!-- <ion-card-content>
     <ion-card-title>{{spot.name}}</ion-card-title>
       <h4>Stoke Meter: {{spot.stokeMeter}}</h4>
       <h4>5-0 Meter: {{spot.fiveOMeter}}</h4>
 
-      <!-- <button (click)="editSpot(spot.$key)">Edit</button>
+      <button (click)="editSpot(spot.$key)">Edit</button>
       <button (click)="deleteSpot(spot.$key)">Delete</button>
       <edit-spot [skateSpotToDisplay]="skateSpotToDisplay" [skateSpotToDisplayKey]="skateSpotToDisplayKey"
-      [(features)]="features"></edit-spot> -->
-    </ion-card-content>
+      [(features)]="features"></edit-spot>
+    </ion-card-content> -->
   </ion-card>
 
-</div>
+</ion-content>
 
-    <map *ngIf="showMapVar"></map>
+<map-view [testFilter]="testFilter" *ngIf="showMapVar"></map-view>
 
 
 </ion-content>
@@ -39,11 +44,13 @@
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content padding>
     <ion-list>
-     <button ion-button (click)="showMap()">Map View</button>
-     <button ion-button (click)="showFeatures()">List View</button>
-     <h4>Spot Features:</h4>
+
+     <button class="menuButton" menuToggle (click)="showMap()">Map View</button>
+     <button class="menuButton" menuToggle (click)="showFeatures()">List View</button>
+     <h5>Filter By Features:</h5>
+
      <ion-item>
        <ion-label>Stairs</ion-label>
        <ion-checkbox [(ngModel)]="testFilter.stairs"></ion-checkbox>

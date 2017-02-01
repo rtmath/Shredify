@@ -101,9 +101,12 @@ export class AddSpotComponent {
     imageRef.putString(this.currentImage, firebase.storage.StringFormat.DATA_URL).then((snapshot)=> {
       this.successAlert();
       var url = snapshot.downloadURL;
-      alert(url);
+      // alert(url);
 
       this.currentImageUrl = url;
+
+      this.secondForm = true;
+      this.firstForm = null;
 
       // imageRef.getDownloadURL().then(function(url) {
       //   alert(url);
@@ -137,11 +140,11 @@ export class AddSpotComponent {
     this.firstForm = true;
   }
 
-  nextForm1() {
-
-    this.secondForm = true;
-    this.firstForm = null;
-  }
+  // nextForm1() {
+  //
+  //   this.secondForm = true;
+  //   this.firstForm = null;
+  // }
 
   nextForm2() {
     this.secondForm = null;

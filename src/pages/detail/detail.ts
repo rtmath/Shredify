@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { SpotDetailMapViewComponent } from './components/spot-detail-map-view/spot-detail-map-view';
 
 @Component({
   selector: 'page-detail',
@@ -12,7 +12,5 @@ export class DetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.spot = navParams.get('spot');
   }
-
-
 
 }
