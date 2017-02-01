@@ -81,7 +81,7 @@ export class AddSpotComponent {
           var currentLon: number = resp.coords.longitude;
           this.clickedLat = currentLat;
           this.clickedLon = currentLon;
-          this.useMap = null;
+          this.selectLocationType = null;
           this.firstForm = true;
           // alert(currentLat + currentLon);
     });
