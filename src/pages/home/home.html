@@ -11,31 +11,31 @@
 
   <h4>Spot Features:</h4>
   <label>Stair Set
-    <input type="checkbox" [(ngModel)]="testFilter.stairs" (ngModelChange)="change()">
+    <input type="checkbox" [(ngModel)]="testFilter.stairs">
   </label>
   <label>Rails
-    <input type="checkbox" [(ngModel)]="testFilter.rails" (ngModelChange)="change()">
+    <input type="checkbox" [(ngModel)]="testFilter.rails">
   </label>
   <label>Manual Pad
-    <input type="checkbox" [(ngModel)]="testFilter.mannypad" (ngModelChange)="change()">
+    <input type="checkbox" [(ngModel)]="testFilter.mannypad">
   </label>
   <label>Gap
-    <input type="checkbox" [(ngModel)]="testFilter.gap" (ngModelChange)="change()">
+    <input type="checkbox" [(ngModel)]="testFilter.gap">
   </label>
   <label>Ledge
-    <input type="checkbox" [(ngModel)]="testFilter.ledge" (ngModelChange)="change()">
+    <input type="checkbox" [(ngModel)]="testFilter.ledge">
   </label>
   <label>Bank
-    <input type="checkbox" [(ngModel)]="testFilter.bank" (ngModelChange)="change()">
+    <input type="checkbox" [(ngModel)]="testFilter.bank">
   </label>
   <label>Wall Ride
-    <input type="checkbox" [(ngModel)]="testFilter.wallride" (ngModelChange)="change()">
+    <input type="checkbox" [(ngModel)]="testFilter.wallride">
   </label>
   <label>Drop
-    <input type="checkbox" [(ngModel)]="testFilter.drop" (ngModelChange)="change()">
+    <input type="checkbox" [(ngModel)]="testFilter.drop">
   </label>
   <label>Transitions
-    <input type="checkbox" [(ngModel)]="testFilter.transitions" (ngModelChange)="change()">
+    <input type="checkbox" [(ngModel)]="testFilter.transitions">
   </label>
 
   <ion-card *ngFor="let spot of skatespots | async | filter:testFilter"  color="secondary" (click)="viewSpot(spot)">
