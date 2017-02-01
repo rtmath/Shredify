@@ -16,7 +16,18 @@
 <ion-content padding>
   <p>{{spot.lat}} and {{spot.lon}}</p>
   <img src="{{spot.image}}" alt="">
-  <p>{{spot.features}}</p>
+  Features:
+  <ul>
+    <li *ngIf="spot.features.stairs">Stairs</li>
+    <li *ngIf="spot.features.rails">Rails</li>
+    <li *ngIf="spot.features.mannypad">Manual Pad</li>
+    <li *ngIf="spot.features.gap">Gap</li>
+    <li *ngIf="spot.features.ledge">Ledge</li>
+    <li *ngIf="spot.features.bank">Bank</li>
+    <li *ngIf="spot.features.wallride">Wallride</li>
+    <li *ngIf="spot.features.drop">Drop</li>
+    <li *ngIf="spot.features.transitions">Transitions</li>
+  </ul>
   <p>{{spot.notes}}</p>
   <p>{{spot.comments}}</p>
   <p>{{spot.stokeMeter}}</p>
@@ -25,3 +36,13 @@
 
 
 </ion-content>
+
+public stairs: boolean,
+public rails: boolean,
+public mannypad: boolean,
+public gap: boolean,
+public ledge: boolean,
+public bank: boolean,
+public wallride: boolean,
+public drop: boolean,
+public transitions: boolean

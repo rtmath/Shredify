@@ -8,11 +8,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class DetailPage {
   spot:any;
+  spotFeatures;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.spot = navParams.get('spot');
+    this.spotFeatures = Object.keys(this.spot.features);
   }
-
-
 
 }
