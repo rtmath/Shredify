@@ -128,7 +128,7 @@ export class AddSpotComponent {
 
   nextForm() {
     this.useMap = null;
-    this.secondForm = true;
+    this.firstForm = true;
   }
 
   nextForm1() {

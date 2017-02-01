@@ -17,7 +17,8 @@ import { AddSpotComponent } from '../../components/add-spot/add-spot';
   providers: [SkateSpotService]
 })
 export class HomePage implements OnInit {
-
+  showMapVar: boolean = false;
+  showFeaturesVar: boolean = true;
   skatespots: FirebaseListObservable<any[]>;
   skateSpotToDisplay;
   skateSpotToDisplayKey: string = "";
@@ -62,6 +63,14 @@ export class HomePage implements OnInit {
 
   newSpot() {
     this.navCtrl.push(AddSpotComponent);
+  }
+  showMap(){
+    this.showMapVar = true;
+    this.showFeaturesVar = false;
+  }
+  showFeatures(){
+    this.showFeaturesVar = true;
+    this.showMapVar = false;
   }
 
 }
