@@ -42,6 +42,7 @@
      </ion-content> -->
      <ion-list *ngIf="secondForm">
       <h4>Spot Features:</h4>
+      <button ion-button (click)="screenShot()">camera shit</button>
       <ion-item>
         <ion-label>Stairs</ion-label>
         <ion-checkbox [(ngModel)]="features.stairs"></ion-checkbox>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
@@ -8,12 +8,7 @@ import { Camera, CameraOptions, ScreenOrientation } from 'ionic-native';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
 
-/*
-  Generated class for the AddSpot component.
 
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
-*/
 @Component({
   selector: 'add-spot',
   templateUrl: 'add-spot.html',
@@ -74,17 +69,21 @@ export class AddSpotComponent {
   }
 
 
+  screenShot(){
 
+    // ScreenOrientation.lockOrientation('landscape');
+
+
+
+  }
 
   takePicture(){
-    ScreenOrientation.lockOrientation('landscape');
     Camera.getPicture({
         destinationType: Camera.DestinationType.DATA_URL,
         targetWidth: 1000,
         targetHeight: 1000
     }).then((imageData) => {
         this.currentImage = "data:image/jpeg;base64," + imageData;
-        ScreenOrientation.unlockOrientation();
     }, (err) => {
         console.log(err);
     });
