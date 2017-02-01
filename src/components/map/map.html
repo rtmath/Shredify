@@ -4,10 +4,9 @@
   See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
   for more info on Angular 2 Components.
 -->
-<hr>
-<h4>Map</h4>
 
-<h4>Spot Features:</h4>
+<!--FILTER - DO NOT DELETE-->
+<!-- <h4>Spot Features:</h4>
 <label>Stair Set
   <input type="checkbox" [(ngModel)]="testFilter.stairs">
 </label>
@@ -34,7 +33,7 @@
 </label>
 <label>Transitions
   <input type="checkbox" [(ngModel)]="testFilter.transitions">
-</label>
+</label> -->
 
 <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClick($event)">
   <div *ngFor="let spot of spots | filter:testFilter">
@@ -56,7 +55,8 @@
       [longitude]="newSpot.lon"
       [markerDraggable]="newSpot.draggable"
       [openInfoWindow]="true"
-      [iconUrl]="iconImg">
+      [iconUrl]="iconImg"
+      (dragEnd)="updateLoc($event)">
       <sebm-google-map-info-window>
         Do you want to add this spot?
         <div class="markerButton">Add Spot</div>

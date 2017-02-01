@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SkateSpotService } from '../../app/skate-spot.service';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { FirebaseListObservable } from 'angularfire2';
@@ -27,6 +27,8 @@ export class MapComponent {
       drop: false,
       transitions: false
   }
+
+  @Output() locSender = new EventEmitter();
 
   newSpot = null;
   newSpotDraggable = false;
@@ -57,11 +59,22 @@ export class MapComponent {
         draggable: true,
         open: false
       }
+      var coords = {
+        lat: this.clickedLat,
+        lon: this.clickedLon
+      }
+      this.locSender.emit(coords)
     }
   }
 
-  setMarker(title) {
-
+  updateLoc(event) {
+    this.clickedLat = event.coords.lat;
+    this.clickedLon = event.coords.lng;
+    var coords = {
+      lat: this.clickedLat,
+      lon: this.clickedLon
+    };
+    this.locSender.emit(coords)
   }
 
 }
