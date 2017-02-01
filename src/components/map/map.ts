@@ -16,6 +16,17 @@ export class MapComponent {
   clickedLon: number;
   zoom: number = 12;
   text: string;
+  testFilter: FeatureModel = {
+      stairs: false,
+      rails: false,
+      mannypad: false,
+      gap: false,
+      ledge: false,
+      bank: false,
+      wallride: false,
+      drop: false,
+      transitions: false
+  }
 
   newSpot = null;
   newSpotDraggable = false;
