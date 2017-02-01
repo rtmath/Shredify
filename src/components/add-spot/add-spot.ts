@@ -21,13 +21,22 @@ import { HomePage } from '../../pages/home/home';
 })
 export class AddSpotComponent {
 
+  selectLocationType = true;
+
+  useLocation = null;
+
+  useMap = null;
+
   secondForm = null;
 
-  firstForm = true;
+  firstForm = null;
 
   thirdForm = null;
 
+  locationSelected = null;
 
+  clickedLat: number;
+  clickedLon: number;
 
   features: FeatureModel = new FeatureModel(false, false, false, false, false, false, false, false, false);
 
@@ -44,8 +53,8 @@ export class AddSpotComponent {
 
   submitForm(newName: string, newNotes:string, newComments:string, newStokeMeter:number, newfiveOMeter:number){
 
-    var newLat:number = 45.523064;
-    var newLon:number = -122.676483;
+    var newLat:number = this.clickedLat;
+    var newLon:number = this.clickedLon;
     var newFeatures = this.features;
     var image = this.currentImageUrl;
 
@@ -105,6 +114,27 @@ export class AddSpotComponent {
 
   successAlert() {
     alert("Upload Successful!");
+  }
+
+  setLocation(event) {
+    this.locationSelected = true;
+    this.clickedLat = event.lat;
+    this.clickedLon = event.lon;
+  }
+
+  goToLocationForm() {
+    this.selectLocationType = null;
+    this.useLocation = true;
+  }
+
+  goToMapForm() {
+    this.selectLocationType = null;
+    this.useMap = true;
+  }
+
+  nextForm() {
+    this.useMap = null;
+    this.secondForm = true;
   }
 
   nextForm1() {

@@ -1,40 +1,4 @@
-<!--
-  Generated template for the Map component.
 
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
--->
-<hr>
-<h4>Map</h4>
-
-<h4>Spot Features:</h4>
-<label>Stair Set
-  <input type="checkbox" [(ngModel)]="testFilter.stairs">
-</label>
-<label>Rails
-  <input type="checkbox" [(ngModel)]="testFilter.rails">
-</label>
-<label>Manual Pad
-  <input type="checkbox" [(ngModel)]="testFilter.mannypad">
-</label>
-<label>Gap
-  <input type="checkbox" [(ngModel)]="testFilter.gap">
-</label>
-<label>Ledge
-  <input type="checkbox" [(ngModel)]="testFilter.ledge">
-</label>
-<label>Bank
-  <input type="checkbox" [(ngModel)]="testFilter.bank">
-</label>
-<label>Wall Ride
-  <input type="checkbox" [(ngModel)]="testFilter.wallride">
-</label>
-<label>Drop
-  <input type="checkbox" [(ngModel)]="testFilter.drop">
-</label>
-<label>Transitions
-  <input type="checkbox" [(ngModel)]="testFilter.transitions">
-</label>
 
 <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClick($event)">
   <div *ngFor="let spot of spots | filter:testFilter">
@@ -56,7 +20,8 @@
       [longitude]="newSpot.lon"
       [markerDraggable]="newSpot.draggable"
       [openInfoWindow]="true"
-      [iconUrl]="iconImg">
+      [iconUrl]="iconImg"
+      (dragEnd)="updateLoc($event)">
       <sebm-google-map-info-window>
         Do you want to add this spot?
         <div class="markerButton">Add Spot</div>
@@ -64,7 +29,3 @@
     </sebm-google-map-marker>
   </div>
  </sebm-google-map>
-
-<!-- <div *ngIf="clickedLat != null && clickedLon != null">
-Clicked Lat: {{clickedLat}} || Clicked Lon: {{clickedLon}}
-</div> -->
