@@ -59,64 +59,6 @@
 //   margin-bottom: 10px;
 // }
 
-ion-header {
-  .header {
-    .header-md::after {
-      bottom: 0px !important;
-    }
-  }
-  ion-navbar {
-    padding: 0 !important;
-    margin-bottom: 0 !important;
-  }
-  ion-title {
-    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/77/32/ad/7732ad8a1e91ad63185394b98bf33cb7.jpg");
-    text-align: center;
-    background-size: cover;
-    font-family: 'Bangers', cursive;
-    h1 {
-      font-size: 70px !important;
-    }
-  }
-}
-
-ion-content {
-  ion-card {
-    margin-bottom: 25px !important;
-  }
-  ion-card-title {
-    font-size: 40px !important;
-  }
-  h4  {
-    font-size: 20px !important;
-  }
-}
-
-.scroll-content {
-
-  text-align: center;
-  font-family: 'Bangers', cursive;
-  background-color: black;
-  margin-bottom: 40px !important;
-
-  h1 {
-    font-size: 70px !important;
-  }
-}
-
-label {
-  color: #387ef5;
-}
-
-input {
-  margin-bottom: 10px;
-}
-
-button {
-  margin-bottom: 10px;
-}
-
-
 
 .newButton {
   position: fixed;
