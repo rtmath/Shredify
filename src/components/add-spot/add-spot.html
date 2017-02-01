@@ -33,8 +33,8 @@
 
         <button ion-button color="primary" (click)="takePicture()">add image</button>
         <img [src]="currentImage" *ngIf="currentImage" />
-        <button ion-button color="secondary" (click)="upload()" *ngIf="currentImage">Upload!</button>
-        <button type="button" name="button" (click)="nextForm1()" ion-button color="secondary" class="nextButton">Next</button>
+        <button ion-button color="secondary" (click)="upload()" *ngIf="currentImage" class="nextButton">Next</button>
+        <!-- <button type="button" name="button" (click)="nextForm1()" ion-button color="secondary" class="nextButton">Next</button> -->
       </ion-content>
 
      <!-- <ion-content>
