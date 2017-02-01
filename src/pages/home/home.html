@@ -1,43 +1,16 @@
-<!-- <ion-header>
+
+<ion-header>
   <ion-navbar>
-
-    <ion-title><h1>Shredify!</h1></ion-title>
-
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
-</ion-header> -->
-
+</ion-header>
 <ion-content padding>
   <div class="newButton" (click)="newSpot()">+</div>
 
-  <h4>Spot Features:</h4>
-  <label>Stair Set
-    <input type="checkbox" [(ngModel)]="testFilter.stairs">
-  </label>
-  <label>Rails
-    <input type="checkbox" [(ngModel)]="testFilter.rails">
-  </label>
-  <label>Manual Pad
-    <input type="checkbox" [(ngModel)]="testFilter.mannypad">
-  </label>
-  <label>Gap
-    <input type="checkbox" [(ngModel)]="testFilter.gap">
-  </label>
-  <label>Ledge
-    <input type="checkbox" [(ngModel)]="testFilter.ledge">
-  </label>
-  <label>Bank
-    <input type="checkbox" [(ngModel)]="testFilter.bank">
-  </label>
-  <label>Wall Ride
-    <input type="checkbox" [(ngModel)]="testFilter.wallride">
-  </label>
-  <label>Drop
-    <input type="checkbox" [(ngModel)]="testFilter.drop">
-  </label>
-  <label>Transitions
-    <input type="checkbox" [(ngModel)]="testFilter.transitions">
-  </label>
 
+<div *ngIf="showFeaturesVar">
   <ion-card *ngFor="let spot of skatespots | async | filter:testFilter"  color="secondary" (click)="viewSpot(spot)">
     <img class="imgSize" src="{{spot.image}}" alt="" />
 
@@ -52,8 +25,67 @@
       [(features)]="features"></edit-spot> -->
     </ion-card-content>
   </ion-card>
+
+</div>
+
     <!-- <add-spot></add-spot>
     <map></map> -->
-    <map></map>
+    <map *ngIf="showMapVar"></map>
 
 </ion-content>
+
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+     <button ion-button (click)="showMap()">Map View</button>
+     <button ion-button (click)="showFeatures()">List View</button>
+     <h4>Spot Features:</h4>
+     <ion-item>
+       <ion-label>Stairs</ion-label>
+       <ion-checkbox [(ngModel)]="testFilter.stairs"></ion-checkbox>
+     </ion-item>
+     <ion-item>
+       <ion-label>Rails</ion-label>
+       <ion-checkbox [(ngModel)]="testFilter.rails"></ion-checkbox>
+     </ion-item>
+     <ion-item>
+       <ion-label>Manual Pad</ion-label>
+       <ion-checkbox [(ngModel)]="testFilter.mannypad"></ion-checkbox>
+     </ion-item>
+     <ion-item>
+       <ion-label>Gap</ion-label>
+       <ion-checkbox [(ngModel)]="testFilter.gap"></ion-checkbox>
+     </ion-item>
+     <ion-item>
+       <ion-label>Ledge</ion-label>
+       <ion-checkbox [(ngModel)]="testFilter.ledge"></ion-checkbox>
+     </ion-item>
+     <ion-item>
+       <ion-label>Bank</ion-label>
+       <ion-checkbox [(ngModel)]="testFilter.bank"></ion-checkbox>
+     </ion-item>
+     <ion-item>
+       <ion-label>Wall Ride</ion-label>
+       <ion-checkbox [(ngModel)]="testFilter.wallride"></ion-checkbox>
+     </ion-item>
+     <ion-item>
+       <ion-label>Drop</ion-label>
+       <ion-checkbox [(ngModel)]="testFilter.drop"></ion-checkbox>
+     </ion-item>
+     <ion-item>
+       <ion-label>Transitions</ion-label>
+       <ion-checkbox [(ngModel)]="testFilter.transitions"></ion-checkbox>
+     </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

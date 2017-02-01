@@ -7,34 +7,6 @@
 <hr>
 <h4>Map</h4>
 
-<h4>Spot Features:</h4>
-<label>Stair Set
-  <input type="checkbox" [(ngModel)]="testFilter.stairs">
-</label>
-<label>Rails
-  <input type="checkbox" [(ngModel)]="testFilter.rails">
-</label>
-<label>Manual Pad
-  <input type="checkbox" [(ngModel)]="testFilter.mannypad">
-</label>
-<label>Gap
-  <input type="checkbox" [(ngModel)]="testFilter.gap">
-</label>
-<label>Ledge
-  <input type="checkbox" [(ngModel)]="testFilter.ledge">
-</label>
-<label>Bank
-  <input type="checkbox" [(ngModel)]="testFilter.bank">
-</label>
-<label>Wall Ride
-  <input type="checkbox" [(ngModel)]="testFilter.wallride">
-</label>
-<label>Drop
-  <input type="checkbox" [(ngModel)]="testFilter.drop">
-</label>
-<label>Transitions
-  <input type="checkbox" [(ngModel)]="testFilter.transitions">
-</label>
 
 <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClick($event)">
   <div *ngFor="let spot of spots | filter:testFilter">
