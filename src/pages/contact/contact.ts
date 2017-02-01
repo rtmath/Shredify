@@ -41,19 +41,24 @@ export class ContactPage {
 
     imageRef.putString(this.currentImage, firebase.storage.StringFormat.DATA_URL).then((snapshot)=> {
       this.successAlert();
-    });
-
-
-    imageRef.getDownloadURL().then(function(url) {
+      var url = snapshot.downloadURL;
       alert(url);
 
+      // imageRef.getDownloadURL().then(function(url) {
+      //   alert(url);
+      //
+      // });
     });
-
   }
 
   successAlert() {
     alert("Upload Successful!");
   }
+
+  // imageURL(url) {
+  //   alert("2" + url.downloadURL);
+  //   alert("3" + url);
+  // }
 
 
 

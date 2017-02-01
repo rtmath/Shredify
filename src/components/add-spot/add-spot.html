@@ -4,40 +4,142 @@
   See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
   for more info on Angular 2 Components.
 -->
-<label>Spot Name:</label>
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add New Skate Spot</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-content>
+      <ion-content *ngIf="firstForm">
+
+        <button ion-button color="primary" (click)="takePicture()">add image</button>
+        <img [src]="currentImage" *ngIf="currentImage" />
+        <button ion-button color="secondary" (click)="upload()" *ngIf="currentImage">Upload!</button>
+        <button type="button" name="button" (click)="nextForm1()" ion-button color="secondary" class="nextButton">Next</button>
+      </ion-content>
+
+     <!-- <ion-content>
+       <p>testing</p>
+     </ion-content> -->
+     <ion-list *ngIf="secondForm">
+      <h4>Spot Features:</h4>
+      <ion-item>
+        <ion-label>Stairs</ion-label>
+        <ion-checkbox [(ngModel)]="features.stairs"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Rails</ion-label>
+        <ion-checkbox [(ngModel)]="features.rails"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Manual Pad</ion-label>
+        <ion-checkbox [(ngModel)]="features.mannypad"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gap</ion-label>
+        <ion-checkbox [(ngModel)]="features.gap"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Ledge</ion-label>
+        <ion-checkbox [(ngModel)]="features.ledge"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Bank</ion-label>
+        <ion-checkbox [(ngModel)]="features.bank"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Wall Ride</ion-label>
+        <ion-checkbox [(ngModel)]="features.wallride"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Drop</ion-label>
+        <ion-checkbox [(ngModel)]="features.drop"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Transitions</ion-label>
+        <ion-checkbox [(ngModel)]="features.transitions"></ion-checkbox>
+      </ion-item>
+      <button (click)="nextForm2()" ion-button color="secondary" class="nextButton">Next</button>
+     </ion-list>
+
+     <ion-list *ngIf="thirdForm">
+       <ion-item>
+         <ion-label>Spot Name:</ion-label>
+         <ion-input #newName></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label>Notes:</ion-label>
+         <ion-input #newNotes></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label>Comments:</ion-label>
+         <ion-input #newComments></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label>Stoke Meter:</ion-label>
+         <ion-input #newStokeMeter></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label>5-0 Meter:</ion-label>
+         <ion-input #newFiveOMeter></ion-input>
+       </ion-item>
+       <button (click)=
+       "submitForm(newName.value,
+       newNotes.value,
+       newComments.value,
+       newStokeMeter.value,
+       newFiveOMeter.value);" ion-button color="primary" class="nextButton">Add Spot!</button>
+     </ion-list>
+
+  </ion-content>
+
+
+
+
+
+
+<!-- <label>Spot Name:</label>
 <input class="form-control" #newName><br>
 <label>Spot Image:</label>
 <input class="form-control" #newImage><br>
 
-<h4>Spot Features:</h4>
-<label>Stair Set
-  <input type="checkbox" [(ngModel)]="features.stairs">
-</label>
-<label>Rails
-  <input type="checkbox" [(ngModel)]="features.rails">
-</label>
-<label>Manual Pad
-  <input type="checkbox" [(ngModel)]="features.mannypad">
-</label>
-<label>Gap
-  <input type="checkbox" [(ngModel)]="features.gap">
-</label>
-<label>Ledge
-  <input type="checkbox" [(ngModel)]="features.ledge">
-</label>
-<label>Bank
-  <input type="checkbox" [(ngModel)]="features.bank">
-</label>
-<label>Wall Ride
-  <input type="checkbox" [(ngModel)]="features.wallride">
-</label>
-<label>Drop
-  <input type="checkbox" [(ngModel)]="features.drop">
-</label>
-<label>Transitions
-  <input type="checkbox" [(ngModel)]="features.transitions">
-</label>
-<hr>
+  <h4>Spot Features:</h4>
+  <label>Stair Set
+    <input type="checkbox" [(ngModel)]="features.stairs">
+  </label>
+  <label>Rails
+    <input type="checkbox" [(ngModel)]="features.rails">
+  </label>
+  <label>Manual Pad
+    <input type="checkbox" [(ngModel)]="features.mannypad">
+  </label>
+  <label>Gap
+    <input type="checkbox" [(ngModel)]="features.gap">
+  </label>
+  <label>Ledge
+    <input type="checkbox" [(ngModel)]="features.ledge">
+  </label>
+  <label>Bank
+    <input type="checkbox" [(ngModel)]="features.bank">
+  </label>
+  <label>Wall Ride
+    <input type="checkbox" [(ngModel)]="features.wallride">
+  </label>
+  <label>Drop
+    <input type="checkbox" [(ngModel)]="features.drop">
+  </label>
+  <label>Transitions
+    <input type="checkbox" [(ngModel)]="features.transitions">
+  </label>
+  <hr>
+
+
 <label>Spot Notes:</label>
 <input class="form-control" #newNotes><br>
 <label>Spot Comments:</label>
@@ -56,4 +158,6 @@
     newComments.value,
     newStokeMeter.value,
     newfiveOMeter.value);">Add</button>
-  <hr>
+  <hr> -->
+
+</ion-content>

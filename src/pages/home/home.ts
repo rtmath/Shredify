@@ -7,6 +7,8 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { NavController } from 'ionic-angular';
 import { FeatureModel } from '../../app/feature-model'
 import { FeatureFilter } from '../../pipes/feature-filter';
+import { DetailPage } from '../detail/detail';
+import { AddSpotComponent } from '../../components/add-spot/add-spot';
 
 
 @Component({
@@ -51,8 +53,15 @@ export class HomePage implements OnInit {
     this.skateSpotService.deleteSpot(key);
   }
 
-  change() {
-    console.log(this.testFilter);
+  viewSpot(spot){
+    console.log(spot);
+    this.navCtrl.push(DetailPage, {
+      spot:spot
+    })
+  }
+
+  newSpot() {
+    this.navCtrl.push(AddSpotComponent);
   }
 
 }
