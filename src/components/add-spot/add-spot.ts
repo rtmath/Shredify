@@ -8,12 +8,6 @@ import { Camera, CameraOptions, ScreenOrientation } from 'ionic-native';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
 
-/*
-  Generated class for the AddSpot component.
-
-  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
-*/
 @Component({
   selector: 'add-spot',
   templateUrl: 'add-spot.html',

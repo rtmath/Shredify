@@ -1,0 +1,11 @@
+<sebm-google-map [latitude]="markerLat" [longitude]="markerLon" [zoom]="zoom">
+    <sebm-google-map-marker
+      [latitude]="markerLat"
+      [longitude]="markerLon"
+      [markerDraggable]="false"
+      [openInfoWindow]="true">
+      <sebm-google-map-info-window>
+        <h5>{{spot.name}}</h5><br>
+      </sebm-google-map-info-window>
+    </sebm-google-map-marker>
+ </sebm-google-map>

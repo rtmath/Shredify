@@ -7,6 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { DetailPage } from '../pages/detail/detail';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MapComponent } from '../components/map/map';
+import { MapViewComponent } from '../components/map-view/map-view';
+import { SpotDetailMapViewComponent } from '../components/spot-detail-map-view/spot-detail-map-view';
 import { masterFirebaseConfig } from './api-key';
 import { mastergoogleMaps } from './api-key';
 import { AngularFireModule } from 'angularfire2';
@@ -37,6 +39,8 @@ export const googleMaps = {
     AddSpotComponent,
     EditSpotComponent,
     MapComponent,
+    MapViewComponent,
+    SpotDetailMapViewComponent,
     FeatureFilter
   ],
   imports: [
@@ -56,7 +60,9 @@ export const googleMaps = {
     TabsPage,
     AddSpotComponent,
     EditSpotComponent,
-    MapComponent
+    MapComponent,
+    MapViewComponent,
+    SpotDetailMapViewComponent
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
