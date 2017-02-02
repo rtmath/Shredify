@@ -14,7 +14,7 @@
 </ion-header>
 
 <ion-content padding>
-  
+
       <div *ngIf="selectLocationType" class="spotLocationSelection">
         <button ion-button color="primary"  (click)="currentLocation()">Use Current Location</button>
         <button ion-button color="secondary" (click)="goToMapForm()">Use Google Maps</button>
@@ -93,11 +93,11 @@
        </ion-item>
        <ion-item>
          <ion-label>Stoke Meter:</ion-label>
-         <ion-range min="0" max="500" step="1" #newStokeMeter></ion-range>
+         <ion-range min="0" max="100" step="1" #newStokeMeter></ion-range>
        </ion-item>
        <ion-item>
          <ion-label>5-0 Meter:</ion-label>
-         <ion-range min="0" max="500" step="1" #newFiveOMeter></ion-range>
+         <ion-range min="0" max="100" step="1" #newFiveOMeter></ion-range>
        </ion-item>
        <button (click)=
        "submitForm(newName.value,
