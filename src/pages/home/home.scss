@@ -1,63 +1,4 @@
-// // body {
-// //   background-color: colors(secondary);
-// // }
-//
-// ion-header {
-//   .header {
-//     .header-md::after {
-//       bottom: 0px !important;
-//     }
-//   }
-//   ion-navbar {
-//     padding: 0 !important;
-//     margin-bottom: 0 !important;
-//   }
-//   ion-title {
-//     background-image: url("https://s-media-cache-ak0.pinimg.com/originals/77/32/ad/7732ad8a1e91ad63185394b98bf33cb7.jpg");
-//     text-align: center;
-//     background-size: cover;
-//     font-family: 'Bangers', cursive;
-//     h1 {
-//       font-size: 70px !important;
-//     }
-//   }
-// }
-//
-// ion-content {
-//   ion-card {
-//     margin-bottom: 25px !important;
-//   }
-//   ion-card-title {
-//     font-size: 40px !important;
-//   }
-//   h4  {
-//     font-size: 20px !important;
-//   }
-// }
-//
-// .scroll-content {
-//
-//   text-align: center;
-//   font-family: 'Bangers', cursive;
-//   background-color: black;
-//   margin-bottom: 40px !important;
-//
-//   h1 {
-//     font-size: 70px !important;
-//   }
-// }
-//
-// label {
-//   color: #387ef5;
-// }
-//
-// input {
-//   margin-bottom: 10px;
-// }
-//
-// button {
-//   margin-bottom: 10px;
-// }
+
 
 
 .newButton {
@@ -71,9 +12,10 @@
   bottom: 3%;
   right: 3%;
   border-radius: 50%;
-  background-color: rgb(53, 147, 143);
+  background-color: map-get($colors, secondary-accent);
   color: white;
   z-index: 2;
+
 }
 
 .card-background-page {
@@ -105,13 +47,30 @@
     }
   }
 
+
+ion-menu {
+  ion-header {
+    ion-toolbar {
+
+      ion-title {
+      span.menu {
+        display: block;
+        margin-left: 70px !important;
+      }
+    }
+    }
+  }
+}
+
   .card-title {
     position: absolute;
     top: 36%;
     font-size: 3em;
     width: 100%;
     font-weight: bold;
+    font-style: oblique;
     color: #fff;
+    font-family: "Futura";
   }
 
   .card-subtitle {
@@ -130,6 +89,7 @@
   margin: 5% auto;
   padding: 10%;
   font-size: 1.5em;
+  color: white !important;
 }
 
 
@@ -148,9 +108,11 @@ h5 {
 
 
 .item {
-  margin: 1%;
+  // margin: 1%;
+  // margin: auto;
+  width: 100%;
   transition: .5s;
-  padding: 0;
+  padding: 10px;
   .item-inner {
     padding-right: 0;
   }
@@ -158,10 +120,11 @@ h5 {
 
 .item-md.item-block .item-inner {
   padding-right: 0;
+
 }
 
 .highlighted {
-  background-color: salmon;
+  background-color: map-get($colors, accent);
   transition: .5s;
   .label {
     color: white;
@@ -169,7 +132,9 @@ h5 {
 }
 
 .menuHeader {
-  color: black;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   margin: 2%;
 }
 

@@ -6,14 +6,22 @@ add-spot {
 .nextButton {
   // position: absolute;
   // bottom: 10px;
-  width: 90%;
+  width: 100%;
   margin: 3% auto;
+  padding:10px;
 }
+.icon{
+  font-size: 50px;
+
+}
+
+
+
 
 .cameraButton {
   margin-top: 3%;
-  width: 90%;
-  margin: 5% auto;
+  width: 100%;
+  // margin: 5% auto;
   padding: 10%;
   font-size: 1.5em;
 }
@@ -21,11 +29,13 @@ add-spot {
 
 .locationButton {
   padding: 10%;
-  width: 90%;
+  width: 100%;
   font-size: 1.5em;
   color: white !important;
   transition: all 500ms ease-in-out;
+  font-weight: 600;
   margin-top: 20%;
+  // background: map-get($colors, secondary-accent);
   &:active {
     background-color: rgb(71, 203, 151);
     color: black;
@@ -45,7 +55,8 @@ map {
 
 .addListItem {
   border-bottom: 1px solid rgba(198, 85, 111, 0.62);
-  margin: 5%;
+  // margin: 5%;
+  width: 100%;
   transition: all 1s;
   font-size: 1.5em;
   &:focus {
