@@ -1,6 +1,6 @@
 
 
-<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapDraggable]="true">
   <div *ngFor="let spot of filteredSpots">
     <sebm-google-map-marker
       [latitude]="spot.lat"
@@ -8,8 +8,10 @@
       [markerDraggable]="false"
       [openInfoWindow]="true">
       <sebm-google-map-info-window>
-        <h5>{{spot.name}}</h5><br>
-        <a (click)="viewSpotDetails(spot)">Spot Details</a>
+        <div class="infoWindow">
+          <h5 class="iWindowTitle">{{spot.name}}</h5><hr>
+          <a class="iWindowDetails" (click)="viewSpotDetails(spot)">Spot Details</a>
+        </div>
       </sebm-google-map-info-window>
     </sebm-google-map-marker>
   </div>
