@@ -75,7 +75,6 @@ export class HomePage implements OnInit {
 
   toggleValue(name: string) {
     this.testFilter[name] = (this.testFilter[name]) ? false : true;
-    console.log(this.testFilter[name]);
   }
 
   getPropValue(name: string) {
