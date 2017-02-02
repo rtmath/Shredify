@@ -72,7 +72,6 @@ export class AddSpotComponent {
       newComments,
       newStokeMeter,
       newfiveOMeter);
-      console.log(newSkateSpot);
       this.skateSpotService.addSkateSpot(newSkateSpot);
       this.navCtrl.pop(HomePage)
   }

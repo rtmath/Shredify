@@ -114,13 +114,11 @@ export class HomePage implements OnInit {
         output.forEach((elem) => {
           this.filteredSpots.push(elem);
         })
-        console.log("Filter map successful");
       } else {
         this.filteredSpots = [];
         this.skatespots.forEach((elem) => {
           this.filteredSpots.push(elem);
         })
-        console.log("Filter map failed");
       }
   }
 }

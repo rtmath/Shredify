@@ -1,5 +1,7 @@
 
-
+html {
+  overflow-y: auto;
+}
 
 .newButton {
   position: fixed;
@@ -47,6 +49,9 @@
     }
   }
 
+.home-container {
+
+}
 
 ion-menu {
   ion-header {
