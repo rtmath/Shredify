@@ -14,19 +14,15 @@
 </ion-header>
 
 <ion-content padding>
-
+  
       <div *ngIf="selectLocationType" class="spotLocationSelection">
-        <button ion-button color="primary" (click)="goToLocationForm()">Use Location</button>
+        <button ion-button color="primary"  (click)="currentLocation()">Use Current Location</button>
         <button ion-button color="secondary" (click)="goToMapForm()">Use Google Maps</button>
       </div>
 
       <div *ngIf="useMap">
         <map (locSender)="setLocation($event)"></map>
         <button *ngIf="locationSelected" type="button" name="button" (click)="nextForm()" ion-button color="secondary" class="nextButton">Next</button>
-      </div>
-
-      <div *ngIf="useLocation">
-        Geolocation
       </div>
 
       <ion-content *ngIf="firstForm">
@@ -42,6 +38,7 @@
      </ion-content> -->
      <ion-list *ngIf="secondForm">
       <h4>Spot Features:</h4>
+      <button ion-button (click)="screenShot()">camera shit</button>
       <ion-item>
         <ion-label>Stairs</ion-label>
         <ion-checkbox [(ngModel)]="features.stairs"></ion-checkbox>

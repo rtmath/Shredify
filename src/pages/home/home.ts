@@ -10,6 +10,7 @@ import { FeatureModel } from '../../app/feature-model'
 import { FeatureFilter } from '../../pipes/feature-filter';
 import { DetailPage } from '../detail/detail';
 import { AddSpotComponent } from '../../components/add-spot/add-spot';
+import { Geolocation } from 'ionic-native';
 
 
 @Component({
@@ -54,6 +55,8 @@ export class HomePage implements OnInit {
   deleteSpot(key: string) {
     this.skateSpotService.deleteSpot(key);
   }
+
+
 
   viewSpot(spot){
     this.navCtrl.push(DetailPage, {
