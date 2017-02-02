@@ -2,21 +2,88 @@
 
 
 
-@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Barrio|Bowlby+One|Bowlby+One+SC|Open+Sans+Condensed:300');
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,800');
 
 p, ul {
-  color: black;
+
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 0;
 }
 ul{
   list-style: none;
+  margin: 0;
+  padding: 0;
+  li{
+
+
+    display: inline;
+    &:after{
+      content: ", "
+    }
+    &:last-child:after{
+      content: " "
+    }
+  }
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+
 }
 
 span.fancyFont{
 
-  font-family: 'Alfa Slab One', cursive;
+  font-family: 'Open Sans', sans-serif;
+  color: lighten(map-get($colors, highlight), 35%) !important;
+  font-weight: 800;
+  font-size: 1.4em;
+  display: block;
+  margin-top: 15px;
+}
+
+div.meters {
+  margin-top: 25px;
+}
+  // font-style: oblique;
+  // font-size: 1.25em;
+
+span {
+
+}
+.negMargin{
+  margin-left: -2.4em;
+  // font-size: 3em;
+  font-family: 'Bangers', cursive;
+}
+
+ion-title {
+  span.navheader {
+    text-align: center !important;
+  }
+&.title-md {
+  display: flex;
+  align-content: center;
+
+  div.toolbar-title-md {
+    // font-family: 'Open Sans', sans-serif !important;
+    margin-left: -.5em;
+    font-size: 2.4em;
+    font-weight: 800 !important;
+    font-family: 'Bangers', cursive !important;
+    letter-spacing: 3px;
+  }
+}
   color: rgb(54, 43, 50);
 }
 
+.toolbar-title-md {
+  text-align:center;
+
+}
 meter{
   width: 100%;
   margin-bottom: 15px;
@@ -24,12 +91,12 @@ meter{
 
 meter::-webkit-meter-bar {
 
-  background: lighten(salmon, 25%);
+  background: map-get($colors, secondary);
 
 }
 
 
 meter::-webkit-meter-optimum-value {
-  background: lighten(rgb(53, 147, 143), 10%);
+  background: map-get($colors, accent);
 
 }

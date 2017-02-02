@@ -19,17 +19,17 @@ export class AddSpotComponent {
 
   selectLocationType = true;
 
+//set back to null
+  addImageButton = true;
+
   useLocation = null;
 
   useMap = null;
-
-  addImageButton = true;
 
   secondForm = null;
 
   firstForm = null;
 
-//////testing ahhhhh
   thirdForm = null;
 
   locationSelected = null;

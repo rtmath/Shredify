@@ -1,9 +1,10 @@
 
-<ion-header>
-  <ion-navbar>
+<ion-header >
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+    <h3 class="header">Shredify!</h3>
   </ion-navbar>
 </ion-header>
 <ion-content>
@@ -41,15 +42,15 @@
 
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
+    <ion-toolbar color="primary">
+      <ion-title><span class="menu">Menu</span></ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content padding>
     <ion-list>
 
-     <button ion-button color="secondary" class="menuButton" menuToggle (click)="showMap()">Map View</button>
-     <button ion-button color="secondary" class="menuButton" menuToggle (click)="showFeatures()">List View</button>
+     <button ion-button color="primary" class="menuButton" menuToggle (click)="showMap()">Map View</button>
+     <button ion-button color="secondary-accent" class="menuButton" menuToggle (click)="showFeatures()">List View</button>
      <h5 class="menuHeader">Filter By Features:</h5>
      <hr>
 

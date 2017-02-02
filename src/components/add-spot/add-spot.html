@@ -7,7 +7,7 @@
 
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Add New Skate Spot</ion-title>
   </ion-navbar>
 
@@ -18,20 +18,20 @@
       <div *ngIf="selectLocationType" class="spotLocationSelection">
         <h3 class="addHeader">Add the skate spot location</h3>
         <button ion-button color="primary"  class="locationButton"(click)="currentLocation()">Use Current Location</button>
-        <button ion-button color="secondary" class="locationButton" (click)="goToMapForm()">Use Google Maps</button>
+        <button ion-button color="secondary-accent" class="locationButton" (click)="goToMapForm()">Use Google Maps</button>
       </div>
 
       <div *ngIf="useMap">
         <map (locSender)="setLocation($event)"></map>
-        <button *ngIf="locationSelected" type="button" name="button" (click)="nextForm()" ion-button color="secondary" class="nextButton">Next</button>
+        <button *ngIf="locationSelected" type="button" name="button" (click)="nextForm()" ion-button color="secondary" class="nextButton"> <ion-icon name="arrow-forward"></ion-icon></button>
       </div>
 
       <ion-content *ngIf="firstForm">
         <h3 class="addHeader">Add a photo of the spot</h3>
 
-        <button ion-button color="primary" (click)="takePicture()" class="cameraButton" *ngIf="addImageButton">Camera</button>
+        <button ion-button color="primary" (click)="takePicture()" class="cameraButton" *ngIf="addImageButton"><ion-icon name="camera"></ion-icon></button>
         <img [src]="currentImage" *ngIf="currentImage" />
-        <button ion-button color="secondary" (click)="upload()" *ngIf="currentImage" class="nextButton">Next</button>
+        <button ion-button color="secondary" (click)="upload()" *ngIf="currentImage" class="nextButton"> <ion-icon name="arrow-forward"></ion-icon></button>
         <!-- <button type="button" name="button" (click)="nextForm1()" ion-button color="secondary" class="nextButton">Next</button> -->
       </ion-content>
 
@@ -76,10 +76,10 @@
         <ion-label>Transitions</ion-label>
         <ion-checkbox [(ngModel)]="features.transitions"></ion-checkbox>
       </ion-item>
-      <button (click)="nextForm2()" ion-button color="secondary" class="nextButton">Next</button>
+      <button (click)="nextForm2()" ion-button color="secondary" class="nextButton"> <ion-icon name="arrow-forward"></ion-icon></button>
      </ion-list>
 
-     <ion-list *ngIf="thirdForm">
+     <ion-list *ngIf="thirdForm" class="spotForm">
        <ion-item>
          <ion-label>Spot Name:</ion-label>
          <ion-input #newName></ion-input>
@@ -105,7 +105,7 @@
        newNotes.value,
        newComments.value,
        newStokeMeter.value,
-       newFiveOMeter.value);" ion-button color="primary" class="nextButton">Add Spot!</button>
+       newFiveOMeter.value);" ion-button color="primary" class="nextButton lastButton">Add Spot!</button>
      </ion-list>
 
 

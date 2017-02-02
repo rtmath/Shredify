@@ -26,11 +26,14 @@ $menu-md-background: rgb(191, 36, 162);
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    salmon,
-  secondary:  rgb(53, 147, 143),
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    #577399,
+  secondary:  #BDD5EA,
+  tertiary:     #495867,
+  accent:      #FE5F55,
+  secondary-accent: darken(#90D4BB, 20%),
+  highlight:   #F7F7FF,
+  background: #222,
+  content: #fff
 );
 
 

@@ -1,7 +1,7 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{spot.name}}</ion-title>
+  <ion-navbar color="primary" center>
+    <ion-title><span class="negMargin">{{spot.name}}</span></ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,27 +10,39 @@
 <ion-content padding>
   <img src="{{spot.image}}" alt="">
   <br>
-  <span class="fancyFont">
-    Features:
-  </span>
-  <ul>
-    <li *ngIf="spot.features.stairs">Stairs</li>
-    <li *ngIf="spot.features.rails">Rails</li>
-    <li *ngIf="spot.features.mannypad">Manual Pad</li>
-    <li *ngIf="spot.features.gap">Gap</li>
-    <li *ngIf="spot.features.ledge">Ledge</li>
-    <li *ngIf="spot.features.bank">Bank</li>
-    <li *ngIf="spot.features.wallride">Wallride</li>
-    <li *ngIf="spot.features.drop">Drop</li>
-    <li *ngIf="spot.features.transitions">Transitions</li>
-  </ul>
-  <p>{{spot.notes}}</p>
-  <p>{{spot.comments}}</p>
-  <span class="fancyFont">Stoke Meter:</span>
-  <meter max="100" value="{{spot.stokeMeter}}"></meter>
+  <div class="grid">
+    <div>
+      <span class="fancyFont">
+        Features:
+      </span>
+      <ul>
+        <li *ngIf="spot.features.stairs">Stairs</li>
+        <li *ngIf="spot.features.rails">Rails</li>
+        <li *ngIf="spot.features.mannypad">Manual Pad</li>
+        <li *ngIf="spot.features.gap">Gap</li>
+        <li *ngIf="spot.features.ledge">Ledge</li>
+        <li *ngIf="spot.features.bank">Bank</li>
+        <li *ngIf="spot.features.wallride">Wallride</li>
+        <li *ngIf="spot.features.drop">Drop</li>
+        <li *ngIf="spot.features.transitions">Transitions</li>
+      </ul>
+    </div>
+    <div>
+      <span class="fancyFont">Notes:</span>
+      <p>{{spot.notes}}</p>
+    </div>
+  </div>
 
-  <span class="fancyFont">Five-0-Meter:</span>
-  <meter max="100" value="{{spot.fiveOMeter}}"></meter>
+  <span class="fancyFont">Comments:</span>
+  <p>{{spot.comments}}</p>
+  <div class="meters">
+
+    <span class="fancyFont">Stoke Meter:</span>
+    <meter max="100" value="{{80}}"></meter>
+
+    <span class="fancyFont">Five-0-Meter:</span>
+    <meter max="100" value="{{spot.fiveOMeter}}"></meter>
+  </div>
 
 
   <spot-detail-map-view [markerLat]="spot.lat" [markerLon]="spot.lon" [spot]="spot"></spot-detail-map-view>

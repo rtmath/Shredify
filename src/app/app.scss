@@ -13,11 +13,57 @@
 //   font-size: 30px !important;
 //
 // }
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
+h3.header{
+  color: map-get($colors, highlight) !important;
+  font-weight: 600;
+  font-family: 'Bangers', cursive;
+  font-size: 3.5em;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-left: -1em;
+
+}
+h3{
+  color: white !important;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+
+}
 
 
+.header{
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.navHeader{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+}
+.scroll-content{
+  background-color: #222;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+.white-bg{
+  background-color: white;
+}
+
+span.button-inner {
+  font-size: 30px;
+
+}
+.lastButton {
+  padding: 20px;
+}
 .mainLoading {
   margin: auto;
 
+}
+.button-inner{
+  font-weight: 800;
+  text-transform: capitalize;
+  font-size: 1.2em
 }
 // App Global Sass
 // --------------------------------------------------
