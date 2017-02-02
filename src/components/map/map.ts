@@ -79,10 +79,12 @@ export class MapComponent {
     this.locSender.emit(coords)
   }
 
+
   viewSpotDetails(spot) {
     this.navCtrl.push(DetailPage, {
       spot:spot
     })
   }
+
 
 }
