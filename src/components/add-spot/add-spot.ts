@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
@@ -47,10 +47,12 @@ export class AddSpotComponent {
 
   public currentImageUrl: string;
 
+
   public currentImageGallery: string;
 
-  constructor(private skateSpotService: SkateSpotService, public navCtrl: NavController, private sanitizer: DomSanitizer) {
-    this.text = 'Hello World';
+
+  constructor(private skateSpotService: SkateSpotService, public navCtrl: NavController) {
+
   }
 
   submitForm(newName: string, newNotes:string, newComments:string, newStokeMeter:number, newfiveOMeter:number){

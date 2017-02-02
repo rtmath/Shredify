@@ -13,7 +13,7 @@
 
 <ion-content class="card-background-page" *ngIf="showFeaturesVar">
 
-  <ion-card *ngFor="let spot of skatespots | async | filter:testFilter"  color="secondary" (click)="viewSpot(spot)">
+  <ion-card *ngFor="let spot of skatespots"  color="secondary" (click)="viewSpot(spot)">
 
     <img class="imgSize" src="{{spot.image}}" alt="" />
     <div class="card-title">{{spot.name}}</div>
@@ -34,7 +34,7 @@
 
 </ion-content>
 
-<map-view [testFilter]="testFilter" *ngIf="showMapVar"></map-view>
+<map-view [filteredSpots]="filteredSpots" *ngIf="showMapVar"></map-view>
 
 
 </ion-content>

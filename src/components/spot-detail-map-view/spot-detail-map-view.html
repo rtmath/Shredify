@@ -5,7 +5,9 @@
       [markerDraggable]="false"
       [openInfoWindow]="true">
       <sebm-google-map-info-window>
-        <h5>{{spot.name}}</h5><br>
+        <div class="infoWindow">
+          <h5 class="iWindowTitle">{{spot.name}}</h5><hr>
+        </div>
       </sebm-google-map-info-window>
     </sebm-google-map-marker>
  </sebm-google-map>
