@@ -110,12 +110,16 @@
 
 .menuButton {
   font-size: 2em;
-  color: black;
-  // background-color: rgb(53, 147, 143);
-  border: solid 3px rgb(53, 147, 143);
+  color: white;
+  background-color: rgb(53, 147, 143) !important;
+
   background-color: white;
   width: 60%;
   margin: 3% auto;
+}
+
+ion-list {
+  text-align: center;
 }
 //
 // .header {

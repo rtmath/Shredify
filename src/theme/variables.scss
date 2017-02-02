@@ -14,7 +14,8 @@ $font-path: "../assets/fonts";
 
 
 
-
+$menu-md-box-shadow: none;
+$menu-md-background: rgb(191, 36, 162);
 
 // Named Color Variables
 // --------------------------------------------------
@@ -25,7 +26,7 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
+  primary:    salmon,
   secondary:  #77b3cd,
   danger:     #f53d3d,
   light:      #f4f4f4,
