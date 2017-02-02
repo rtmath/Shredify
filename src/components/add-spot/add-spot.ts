@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
@@ -8,6 +8,8 @@ import { Camera, CameraOptions, ScreenOrientation } from 'ionic-native';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
 import { Geolocation } from 'ionic-native';
+import {DomSanitizer} from '@angular/platform-browser';
+
 
 
 @Component({
@@ -35,6 +37,7 @@ export class AddSpotComponent {
   locationSelected = null;
 
   clickedLat: number;
+
   clickedLon: number;
 
   features: FeatureModel = new FeatureModel(false, false, false, false, false, false, false, false, false);
@@ -46,9 +49,11 @@ export class AddSpotComponent {
   public currentImageUrl: string;
 
 
+  public currentImageGallery: string;
+
 
   constructor(private skateSpotService: SkateSpotService, public navCtrl: NavController) {
-    this.text = 'Hello World';
+
   }
 
   submitForm(newName: string, newNotes:string, newComments:string, newStokeMeter:number, newfiveOMeter:number){
@@ -68,9 +73,8 @@ export class AddSpotComponent {
       newStokeMeter,
       newfiveOMeter);
       console.log(newSkateSpot);
-     this.skateSpotService.addSkateSpot(newSkateSpot);
-
-     this.navCtrl.push(HomePage)
+      this.skateSpotService.addSkateSpot(newSkateSpot);
+      this.navCtrl.pop(HomePage)
   }
 
   setLocation(event) {
@@ -81,14 +85,13 @@ export class AddSpotComponent {
 
 
   currentLocation() {
-        Geolocation.getCurrentPosition().then((resp) => {
-          var currentLat: number = resp.coords.latitude;
-          var currentLon: number = resp.coords.longitude;
-          this.clickedLat = currentLat;
-          this.clickedLon = currentLon;
-          this.selectLocationType = null;
-          this.firstForm = true;
-          // alert(currentLat + currentLon);
+    Geolocation.getCurrentPosition().then((resp) => {
+      var currentLat: number = resp.coords.latitude;
+      var currentLon: number = resp.coords.longitude;
+      this.clickedLat = currentLat;
+      this.clickedLon = currentLon;
+      this.selectLocationType = null;
+      this.firstForm = true;
     });
   }
 
@@ -102,7 +105,21 @@ export class AddSpotComponent {
         this.addImageButton = null;
         this.currentImage = "data:image/jpeg;base64," + imageData;
     }, (err) => {
-        console.log(err);
+        alert("Upload Failed!")
+    });
+  }
+
+  selectFromGallery() {
+    var options = {
+      sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: Camera.DestinationType.DATA_URL
+    };
+    Camera.getPicture(options).then((imageData) => {
+      this.currentImage = "data:image/jpeg;base64," + imageData;
+      // this.photoSelected = true;
+      // this.photoTaken = false;
+    }, (err) => {
+
     });
   }
 
@@ -118,26 +135,16 @@ export class AddSpotComponent {
     imageRef.putString(this.currentImage, firebase.storage.StringFormat.DATA_URL).then((snapshot)=> {
       this.successAlert();
       var url = snapshot.downloadURL;
-      // alert(url);
-
       this.currentImageUrl = url;
-
       this.secondForm = true;
       this.firstForm = null;
 
-      // imageRef.getDownloadURL().then(function(url) {
-      //   alert(url);
-      //
-      // });
     });
   }
 
   successAlert() {
     alert("Upload Successful!");
   }
-
-
-
 
   goToLocationForm() {
     this.selectLocationType = null;
@@ -154,23 +161,9 @@ export class AddSpotComponent {
     this.firstForm = true;
   }
 
-  // nextForm1() {
-  //
-  //   this.secondForm = true;
-  //   this.firstForm = null;
-  // }
-
   nextForm2() {
     this.secondForm = null;
     this.thirdForm = true;
   }
-
-  // imageURL(url) {
-  //   alert("2" + url.downloadURL);
-  //   alert("3" + url);
-  // }
-
-
-
 
 }

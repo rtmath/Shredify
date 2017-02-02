@@ -21,7 +21,8 @@ import { Geolocation } from 'ionic-native';
 export class HomePage implements OnInit {
   showMapVar: boolean = false;
   showFeaturesVar: boolean = true;
-  skatespots: FirebaseListObservable<any[]>;
+  skatespots: SkateSpot[] = [];
+  filteredSpots: SkateSpot[] = [];
   skateSpotToDisplay;
   skateSpotToDisplayKey: string = "";
   features: FeatureModel;
@@ -42,7 +43,12 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.skatespots = this.skateSpotService.getSpots();
+    this.skateSpotService.getSpots().subscribe(data => {
+      data.forEach(elem => {
+        this.skatespots.push(elem);
+        this.filteredSpots.push(elem);
+      })
+    });
   }
 
   editSpot(key: string) {
@@ -78,9 +84,43 @@ export class HomePage implements OnInit {
 
   toggleValue(name: string) {
     this.testFilter[name] = (this.testFilter[name]) ? false : true;
+    this.filterMap();
   }
 
   getPropValue(name: string) {
     return (this.testFilter[name]);
+  }
+
+  filterMap() {
+      if (this.skatespots != null && this.testFilter != null) {
+        let output: SkateSpot[] = [];
+
+        this.skatespots.forEach((elem) => {
+          let match = true;
+          for (var property in this.testFilter) {
+            if (match && this.testFilter.hasOwnProperty(property)) {
+              if (this.testFilter[property] === true) {
+                if (elem.features[property] != this.testFilter[property]) {
+                  match = false;
+                }
+              }
+            }
+          }
+          if (match) {
+            output.push(elem);
+          }
+        })
+        this.filteredSpots = [];
+        output.forEach((elem) => {
+          this.filteredSpots.push(elem);
+        })
+        console.log("Filter map successful");
+      } else {
+        this.filteredSpots = [];
+        this.skatespots.forEach((elem) => {
+          this.filteredSpots.push(elem);
+        })
+        console.log("Filter map failed");
+      }
   }
 }

@@ -11,8 +11,13 @@ div {
   border-radius: 15px;
 }
 
-.new {
-  sebm-google-map-marker {
-    background-color: blue;
+.infoWindow {
+  text-align: center;
+  .iWindowTitle {
+    color: seagreen;
+    margin-bottom: 0;
+  }
+  .iWindowDetails {
+    color: darkblue;
   }
 }

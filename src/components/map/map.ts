@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SkateSpotService } from '../../app/skate-spot.service';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { FirebaseListObservable } from 'angularfire2';
@@ -18,22 +18,11 @@ export class MapComponent {
   clickedLon: number;
   zoom: number = 12;
   text: string;
-  testFilter: FeatureModel = {
-      stairs: false,
-      rails: false,
-      mannypad: false,
-      gap: false,
-      ledge: false,
-      bank: false,
-      wallride: false,
-      drop: false,
-      transitions: false
-  }
-
+  @Input() filteredSpots: SkateSpot[] = [];
   @Output() locSender = new EventEmitter();
 
   newSpot = null;
-  newSpotDraggable = false;
+  newSpotDraggable = true;
 
   iconImg = "https://firebasestorage.googleapis.com/v0/b/skater-app-1d3e8.appspot.com/o/green-marker.png?alt=media&token=c174654d-9086-44a9-b484-0cdf57572797";
 

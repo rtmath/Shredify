@@ -30,6 +30,21 @@
       filter: grayscale(0%);
 
     }
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+
+    img {
+      object-fit: fill;
+      @media screen and (max-width: 460px) {
+        object-fit: none;
+      }
+    }
+
+    .image-container {
+      height: 220px;
+    }
   }
 
 
