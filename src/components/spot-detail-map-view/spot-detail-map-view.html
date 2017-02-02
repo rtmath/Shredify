@@ -1,4 +1,4 @@
-<sebm-google-map [latitude]="markerLat" [longitude]="markerLon" [zoom]="zoom">
+<sebm-google-map [latitude]="markerLat" [longitude]="markerLon" [zoom]="zoom" [mapDraggable]="true">
     <sebm-google-map-marker
       [latitude]="markerLat"
       [longitude]="markerLon"
@@ -6,7 +6,7 @@
       [openInfoWindow]="true">
       <sebm-google-map-info-window>
         <div class="infoWindow">
-          <h5 class="iWindowTitle">{{spot.name}}</h5><hr>
+          <h5 class="iWindowTitle">{{spot.name}}</h5><br>
         </div>
       </sebm-google-map-info-window>
     </sebm-google-map-marker>

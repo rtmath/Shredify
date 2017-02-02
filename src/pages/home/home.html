@@ -14,8 +14,9 @@
 <ion-content class="card-background-page" *ngIf="showFeaturesVar">
 
   <ion-card *ngFor="let spot of skatespots"  color="secondary" (click)="viewSpot(spot)">
-
-    <img class="imgSize" src="{{spot.image}}" alt="" />
+    <div class="image-container">
+      <img class="imgSize" src="{{spot.image}}" alt="" />
+    </div>
     <div class="card-title">{{spot.name}}</div>
     <div class="card-subtitle">{{spot.notes}}</div>
 
