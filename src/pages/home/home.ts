@@ -76,4 +76,12 @@ export class HomePage implements OnInit {
     this.showMapVar = false;
   }
 
+  toggleValue(name: string) {
+    this.testFilter[name] = (this.testFilter[name]) ? false : true;
+    console.log(this.testFilter[name]);
+  }
+
+  getPropValue(name: string) {
+    return (this.testFilter[name]);
+  }
 }
