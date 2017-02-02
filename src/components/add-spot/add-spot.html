@@ -30,7 +30,9 @@
         <h3 class="addHeader">Add a photo of the spot</h3>
 
         <button ion-button color="primary" (click)="takePicture()" class="cameraButton" *ngIf="addImageButton">Camera</button>
+        <button ion-button color="secondary" (click)="selectFromGallery()" class="cameraButton" *ngIf="addImageButton">Gallery</button>
         <img [src]="currentImage" *ngIf="currentImage" />
+        <!-- <img [src]="currentImageGallery" *ngIf="currentImageGallery" /> -->
         <button ion-button color="secondary" (click)="upload()" *ngIf="currentImage" class="nextButton">Next</button>
         <!-- <button type="button" name="button" (click)="nextForm1()" ion-button color="secondary" class="nextButton">Next</button> -->
       </ion-content>
