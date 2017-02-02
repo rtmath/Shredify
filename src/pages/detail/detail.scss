@@ -1,3 +1,31 @@
 page-detail {
 
 }
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Barrio|Bowlby+One|Bowlby+One+SC|Open+Sans+Condensed:300');
+p, ul, span{
+  color: #222;
+
+}
+p, ul{
+  // font-family: 'Open Sans Condensed', sans-serif;
+}
+span{
+  font-family: 'Alfa Slab One', cursive;
+
+}
+
+meter{
+  width: 100%;
+  margin-bottom: 15px;
+}
+meter::-webkit-meter-bar {
+  // background: #00ff00 url("smiley.gif") no-repeat fixed center;
+  background: lighten(salmon, 25%);
+
+}
+
+
+meter::-webkit-meter-optimum-value {
+  background: lighten(rgb(53, 147, 143), 10%);
+
+}
