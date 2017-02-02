@@ -4,8 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Barrio|Bowlby+One|Bowlby+One+SC|Open+Sans+Condensed:300');
 
-p {
+p, ul {
   color: black;
+}
+ul{
+  list-style: none;
 }
 
 span.fancyFont{
