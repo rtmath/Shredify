@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
@@ -45,7 +45,7 @@ export class AddSpotComponent {
 
   public currentImageUrl: string;
 
-
+  @Input() filteredSpots: SkateSpot[] = [];
 
   constructor(private skateSpotService: SkateSpotService, public navCtrl: NavController) {
     this.text = 'Hello World';

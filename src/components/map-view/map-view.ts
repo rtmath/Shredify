@@ -15,30 +15,16 @@ export class MapViewComponent {
   lat: number = 45.523064;
   lng: number = -122.676483;
   zoom: number = 10;
-  @Input() testFilter: FeatureModel = {
-      stairs: false,
-      rails: false,
-      mannypad: false,
-      gap: false,
-      ledge: false,
-      bank: false,
-      wallride: false,
-      drop: false,
-      transitions: false
-  }
 
   spots: SkateSpot[] = [];
+  @Input() filteredSpots = [];
 
   constructor(public service: SkateSpotService, public navCtrl: NavController) {
 
   }
 
   ngOnInit() {
-    this.service.getSpots().subscribe(data => {
-      data.forEach((elem) => {
-        this.spots.push(elem);
-      })
-    });
+
   }
 
   viewSpotDetails(spot) {

@@ -1,7 +1,7 @@
 
 
 <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-  <div *ngFor="let spot of spots | filter:testFilter">
+  <div *ngFor="let spot of filteredSpots">
     <sebm-google-map-marker
       [latitude]="spot.lat"
       [longitude]="spot.lon"
