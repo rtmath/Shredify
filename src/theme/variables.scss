@@ -44,9 +44,12 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
-
-
+//
+//#2b8352
+$button-md-ripple-background-color: white;
+$checkbox-md-icon-border-radius: 50px;
+$button-md-box-shadow-activated: black;
+$list-md-border-color: transparent;
 
 // App Windows Variables
 // --------------------------------------------------

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { SkateSpot } from '../../app/skate-spot.model';
 import { SkateSpotService } from '../../app/skate-spot.service';
@@ -7,6 +7,8 @@ import firebase from 'firebase';
 import { Camera, CameraOptions, ScreenOrientation } from 'ionic-native';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../../pages/home/home';
+import { Geolocation } from 'ionic-native';
+
 
 @Component({
   selector: 'add-spot',
@@ -41,6 +43,7 @@ export class AddSpotComponent {
   public currentImageUrl: string;
 
 
+
   constructor(private skateSpotService: SkateSpotService, public navCtrl: NavController) {
     this.text = 'Hello World';
   }
@@ -67,18 +70,33 @@ export class AddSpotComponent {
      this.navCtrl.push(HomePage)
   }
 
+  setLocation(event) {
+    this.locationSelected = true;
+    this.clickedLat = event.lat;
+    this.clickedLon = event.lon;
+  }
 
+
+  currentLocation() {
+        Geolocation.getCurrentPosition().then((resp) => {
+          var currentLat: number = resp.coords.latitude;
+          var currentLon: number = resp.coords.longitude;
+          this.clickedLat = currentLat;
+          this.clickedLon = currentLon;
+          this.selectLocationType = null;
+          this.firstForm = true;
+          // alert(currentLat + currentLon);
+    });
+  }
 
 
   takePicture(){
-    ScreenOrientation.lockOrientation('landscape');
     Camera.getPicture({
         destinationType: Camera.DestinationType.DATA_URL,
         targetWidth: 1000,
         targetHeight: 1000
     }).then((imageData) => {
         this.currentImage = "data:image/jpeg;base64," + imageData;
-        ScreenOrientation.unlockOrientation();
     }, (err) => {
         console.log(err);
     });
@@ -114,11 +132,8 @@ export class AddSpotComponent {
     alert("Upload Successful!");
   }
 
-  setLocation(event) {
-    this.locationSelected = true;
-    this.clickedLat = event.lat;
-    this.clickedLon = event.lon;
-  }
+
+
 
   goToLocationForm() {
     this.selectLocationType = null;

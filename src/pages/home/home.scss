@@ -59,6 +59,7 @@
 //   margin-bottom: 10px;
 // }
 
+
 .newButton {
   position: fixed;
   display: flex;
@@ -118,9 +119,41 @@
   margin: 3% auto;
 }
 
+
 ion-list {
   text-align: center;
 }
+
+ion-label {
+  color: black;
+}
+
+h5 {
+  margin-top: 0;
+}
+
+.item {
+  margin: 1%;
+  transition: .5s;
+  padding: 0;
+  .item-inner {
+    padding-right: 0;
+  }
+}
+
+.item-md.item-block .item-inner {
+  padding-right: 0;
+}
+
+.highlighted {
+  background-color: salmon;
+  transition: .5s;
+  .label {
+    color: white;
+  }
+}
+
+
 //
 // .header {
 //   background-color: red;

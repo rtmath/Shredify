@@ -10,8 +10,10 @@
 <ion-content padding>
   <img src="{{spot.image}}" alt="">
   <br>
-  Features:
-  <ul class="featureList">
+  <span>
+    Features:
+  </span>
+  <ul>
     <li *ngIf="spot.features.stairs">Stairs</li>
     <li *ngIf="spot.features.rails">Rails</li>
     <li *ngIf="spot.features.mannypad">Manual Pad</li>
@@ -24,8 +26,12 @@
   </ul>
   <p>{{spot.notes}}</p>
   <p>{{spot.comments}}</p>
-  <p>{{spot.stokeMeter}}</p>
-  <p>{{spot.fiveOMeter}}</p>
+  <span>Stoke Meter:</span>
+  <meter max="100" value="{{spot.stokeMeter - 10}}"></meter>
+
+  <span>Five-0-Meter:</span>
+  <meter max="100" value="{{spot.fiveOMeter -10}}"></meter>
+
 
   <spot-detail-map-view [markerLat]="spot.lat" [markerLon]="spot.lon" [spot]="spot"></spot-detail-map-view>
 

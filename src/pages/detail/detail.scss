@@ -1,10 +1,32 @@
-page-detail {
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Barrio|Bowlby+One|Bowlby+One+SC|Open+Sans+Condensed:300');
+
+
+p, ul, span{
+  color: #222;
+
+}
+
+span{
+  font-family: 'Alfa Slab One', cursive;
+}
+
+meter{
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+meter::-webkit-meter-bar {
+
+  background: lighten(salmon, 25%);
 
 }
 
 
-.featureList {
-  list-style: none;
-  // display: flex;
-  // justify-content: space-around;
+meter::-webkit-meter-optimum-value {
+  background: lighten(rgb(53, 147, 143), 10%);
+
 }

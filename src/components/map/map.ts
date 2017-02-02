@@ -35,7 +35,7 @@ export class MapComponent {
   newSpot = null;
   newSpotDraggable = false;
 
-  iconImg = "https://firebasestorage.googleapis.com/v0/b/skater-app-1d3e8.appspot.com/o/green-marker.png?alt=media&token=c174654d-9086-44a9-b484-0cdf57572797";
+  iconImg = "http://www.fordesigner.com/imguploads/Image/cjbc/zcool/png20080526/1211755396.png";
 
   spots: SkateSpot[] = [];
 
@@ -79,10 +79,12 @@ export class MapComponent {
     this.locSender.emit(coords)
   }
 
+
   viewSpotDetails(spot) {
     this.navCtrl.push(DetailPage, {
       spot:spot
     })
   }
+
 
 }
