@@ -48,9 +48,10 @@
   <ion-content padding>
     <ion-list>
 
-     <button class="menuButton" menuToggle (click)="showMap()">Map View</button>
-     <button class="menuButton" menuToggle (click)="showFeatures()">List View</button>
-     <h5>Filter By Features:</h5>
+     <button ion-button color="secondary" class="menuButton" menuToggle (click)="showMap()">Map View</button>
+     <button ion-button color="secondary" class="menuButton" menuToggle (click)="showFeatures()">List View</button>
+     <h5 class="menuHeader">Filter By Features:</h5>
+     <hr>
 
      <button ion-item text-center [class.highlighted]="getPropValue('stairs')" (click)="toggleValue('stairs')">
        <ion-label>Stairs</ion-label>

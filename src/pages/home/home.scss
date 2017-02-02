@@ -110,13 +110,11 @@
 }
 
 .menuButton {
-  font-size: 2em;
-  color: white;
-  background-color: rgb(53, 147, 143) !important;
-
-  background-color: white;
-  width: 60%;
-  margin: 3% auto;
+  margin-top: 3%;
+  width: 100%;
+  margin: 5% auto;
+  padding: 10%;
+  font-size: 1.5em;
 }
 
 
@@ -131,6 +129,8 @@ ion-label {
 h5 {
   margin-top: 0;
 }
+
+
 
 .item {
   margin: 1%;
@@ -153,6 +153,10 @@ h5 {
   }
 }
 
+.menuHeader {
+  color: black;
+  margin: 2%;
+}
 
 //
 // .header {

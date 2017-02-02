@@ -23,10 +23,13 @@ export class AddSpotComponent {
 
   useMap = null;
 
+  addImageButton = true;
+
   secondForm = null;
 
   firstForm = null;
 
+//////testing ahhhhh
   thirdForm = null;
 
   locationSelected = null;
@@ -96,6 +99,7 @@ export class AddSpotComponent {
         targetWidth: 1000,
         targetHeight: 1000
     }).then((imageData) => {
+        this.addImageButton = null;
         this.currentImage = "data:image/jpeg;base64," + imageData;
     }, (err) => {
         console.log(err);
