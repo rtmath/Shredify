@@ -51,42 +51,33 @@
      <button class="menuButton" menuToggle (click)="showFeatures()">List View</button>
      <h5>Filter By Features:</h5>
 
-     <ion-item>
+     <button ion-item text-center [class.highlighted]="getPropValue('stairs')" (click)="toggleValue('stairs')">
        <ion-label>Stairs</ion-label>
-       <ion-checkbox [(ngModel)]="testFilter.stairs"></ion-checkbox>
-     </ion-item>
-     <ion-item>
+     </button>
+     <button ion-item text-center [class.highlighted]="getPropValue('rails')" (click)="toggleValue('rails')">
        <ion-label>Rails</ion-label>
-       <ion-checkbox [(ngModel)]="testFilter.rails"></ion-checkbox>
-     </ion-item>
-     <ion-item>
+     </button>
+     <button ion-item text-center [class.highlighted]="getPropValue('mannypad')"  (click)="toggleValue('mannypad')">
        <ion-label>Manual Pad</ion-label>
-       <ion-checkbox [(ngModel)]="testFilter.mannypad"></ion-checkbox>
-     </ion-item>
-     <ion-item>
+     </button>
+     <button ion-item text-center [class.highlighted]="getPropValue('gap')"  (click)="toggleValue('gap')">
        <ion-label>Gap</ion-label>
-       <ion-checkbox [(ngModel)]="testFilter.gap"></ion-checkbox>
-     </ion-item>
-     <ion-item>
+     </button>
+     <button ion-item text-center [class.highlighted]="getPropValue('ledge')"  (click)="toggleValue('ledge')">
        <ion-label>Ledge</ion-label>
-       <ion-checkbox [(ngModel)]="testFilter.ledge"></ion-checkbox>
-     </ion-item>
-     <ion-item>
+     </button>
+     <button ion-item text-center [class.highlighted]="getPropValue('bank')"  (click)="toggleValue('bank')">
        <ion-label>Bank</ion-label>
-       <ion-checkbox [(ngModel)]="testFilter.bank"></ion-checkbox>
-     </ion-item>
-     <ion-item>
-       <ion-label>Wall Ride</ion-label>
-       <ion-checkbox [(ngModel)]="testFilter.wallride"></ion-checkbox>
-     </ion-item>
-     <ion-item>
+     </button>
+     <button ion-item text-center [class.highlighted]="getPropValue('wallride')"  (click)="toggleValue('wallride')">
+       <ion-label>Wallride</ion-label>
+     </button>
+     <button ion-item text-center [class.highlighted]="getPropValue('drop')"  (click)="toggleValue('drop')">
        <ion-label>Drop</ion-label>
-       <ion-checkbox [(ngModel)]="testFilter.drop"></ion-checkbox>
-     </ion-item>
-     <ion-item>
+     </button>
+     <button ion-item text-center [class.highlighted]="getPropValue('transitions')"  (click)="toggleValue('transitions')">
        <ion-label>Transitions</ion-label>
-       <ion-checkbox [(ngModel)]="testFilter.transitions"></ion-checkbox>
-     </ion-item>
+     </button>
 
     </ion-list>
 
