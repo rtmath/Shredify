@@ -44,6 +44,8 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.skateSpotService.getSpots().subscribe(data => {
+      this.skatespots = [];
+      this.filteredSpots = [];
       data.forEach(elem => {
         this.skatespots.push(elem);
         this.filteredSpots.push(elem);
