@@ -34,8 +34,7 @@ This project requires:
       apiKey: "YOUR API KEY HERE"
     }
     ```
-    
-  * Navigate to the repo location using your console/terminal and run the following commands:
+*Navigate to the repo location using your console/terminal and run the following commands:
   
     * npm install
     * bower install
