@@ -21,17 +21,21 @@ This project requires:
   * Clone this repository to a location on your computer
   * Add a ~/src/app/api-keys.ts file with the following code (adding your api key info from firebase):
    
-   ```export var masterFirebaseConfig = {
+   ```
+   export var masterFirebaseConfig = {
     apiKey: "YOUR API KEY HERE",
     authDomain: "YOUR AUTHDOMAIN HERE",
     databaseURL: "YOUR DATABASE URL HERE",
     storageBucket: "YOUR STORAGE BUCKET HERE",
     messagingSenderId: "YOUR MESSAGING SENDER ID"
-    };```
+    };
+    ```
      
-    ```export var mastergoogleMaps = {
+    ```
+    export var mastergoogleMaps = {
       apiKey: "YOUR API KEY HERE"
-    }```
+    }
+    ```
     
   * Navigate to the repo location using your console/terminal and run the following commands:
     * npm install
