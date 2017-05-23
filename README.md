@@ -29,12 +29,14 @@ This project requires:
     storageBucket: "YOUR STORAGE BUCKET HERE",
     messagingSenderId: "YOUR MESSAGING SENDER ID"
     };
- 
+```
+
+```javascript
     export var mastergoogleMaps = {
       apiKey: "YOUR API KEY HERE"
     }
 ```
-*Navigate to the repo location using your console/terminal and run the following commands:
+* Navigate to the repo location using your console/terminal and run the following commands:
   
     * npm install
     * bower install
