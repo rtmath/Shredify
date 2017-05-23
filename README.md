@@ -21,7 +21,7 @@ This project requires:
   * Clone this repository to a location on your computer
   * Add a ~/src/app/api-keys.ts file with the following code (adding your api key info from firebase):
    
-   ```
+   ```javascript
    export var masterFirebaseConfig = {
     apiKey: "YOUR API KEY HERE",
     authDomain: "YOUR AUTHDOMAIN HERE",
@@ -29,15 +29,14 @@ This project requires:
     storageBucket: "YOUR STORAGE BUCKET HERE",
     messagingSenderId: "YOUR MESSAGING SENDER ID"
     };
-    ```
-     
-    ```
+ 
     export var mastergoogleMaps = {
       apiKey: "YOUR API KEY HERE"
     }
     ```
     
   * Navigate to the repo location using your console/terminal and run the following commands:
+  
     * npm install
     * bower install
     ##### THEN (to view in browser)
